@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-family: "Akira";
+    src: url("../fonts/Akira Expanded Demo.otf") format("truetype");
+}
+
+.akira {
+    font-family: "Akira", sans-serif;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+}
+
+.Poppins {
+    font-family: "Poppins", sans-serif;
+}
