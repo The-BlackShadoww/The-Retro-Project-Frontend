@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Gender from "./Gender";
 import ShopByPrice from "./ShopByPrice";
 
@@ -14,6 +13,7 @@ const LeftSideNav = ({
     is50_100Checked,
     isOver100Checked,
     handleCheck,
+    onCategoryChange,
 }) => {
     return (
         <div
@@ -26,13 +26,52 @@ const LeftSideNav = ({
             <nav className={`relative pt-3 pb-8`}>
                 <ul>
                     <li className="pb-2 font-medium">
-                        <Link>Clothings</Link>
+                        <input
+                            type="radio"
+                            name="category"
+                            id="clothing"
+                            value="clothing"
+                            className="appearance-none"
+                            onChange={onCategoryChange}
+                        />
+                        <label
+                            htmlFor="clothing"
+                            className="cursor-pointer hover:opacity-50"
+                        >
+                            Clothings
+                        </label>
                     </li>
                     <li className="pb-2 font-medium">
-                        <Link>Shoes</Link>
+                        <input
+                            type="radio"
+                            name="category"
+                            id="shoes"
+                            value="shoes"
+                            className="appearance-none"
+                            onChange={onCategoryChange}
+                        />
+                        <label
+                            htmlFor="shoes"
+                            className="cursor-pointer hover:opacity-50"
+                        >
+                            Shoes
+                        </label>
                     </li>
                     <li className="pb-2 font-medium">
-                        <Link>Accessories</Link>
+                        <input
+                            type="radio"
+                            name="category"
+                            id="accessories"
+                            value="accessories"
+                            className="appearance-none"
+                            onChange={onCategoryChange}
+                        />
+                        <label
+                            htmlFor="accessories"
+                            className="cursor-pointer hover:opacity-50"
+                        >
+                            Accessories
+                        </label>
                     </li>
                 </ul>
             </nav>

@@ -13,9 +13,9 @@ const ProductGrid = ({ data, isFilter, windowWidth }) => {
     }
 
     let content = data.map((i) => (
-        <Link to={i.path} key={i.id}>
+        <Link to={`/singleProduct/${i.id}`} key={i.id}>
             <div>
-                <ProductImg img={i.img.main_img} />
+                <ProductImg img={i.main_img} />
 
                 <div className="pt-4 tablet:px-0 px-3">
                     <h5 className="text-lg font-medium">{i.name}</h5>
@@ -23,7 +23,10 @@ const ProductGrid = ({ data, isFilter, windowWidth }) => {
                         {i.gender === "" ? i.kids : i.gender}'s {i.category}
                     </h5>
                     <h5 className="pb-2 font-medium opacity-60">
-                        {Object.keys(i.colors).length} colors
+                        {Object.keys(i.colors).length > 0
+                            ? Object.keys(i.colors).length
+                            : 1}{" "}
+                        colors
                     </h5>
                     <h5 className="text-lg font-medium">${i.price}</h5>
                 </div>

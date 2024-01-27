@@ -12,7 +12,6 @@ const Gender = ({
         isWomenChecked: isWomenChecked,
         isKidsChecked: isKidsChecked,
     };
-    console.log(data);
 
     return (
         <div className={`pt-3 pb-6 font-medium`}>

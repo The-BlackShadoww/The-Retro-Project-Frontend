@@ -37,7 +37,10 @@ const Routers = () => {
                     <Route path="women" element={<Women />} />
                     <Route path="kids" element={<Kids />} />
                     <Route path="product" element={<Product />} />
-                    <Route path="singleProduct" element={<SingleProduct />} />
+                    <Route
+                        path="singleProduct/:id"
+                        element={<SingleProduct />}
+                    />
                     <Route path="bag" element={<Bag />} />
                     <Route path="checkout" element={<Checkout />} />
                     <Route path="payment" element={<Payment />} />

@@ -1,18 +1,38 @@
-import React, { useRef, useState } from "react";
-import Modal from "../../UI/Modal/Modal";
+import React, { useEffect, useRef, useState } from "react";
 import Thumbnail from "./Thumbnail";
 import ProductInfo from "./ProductInfo";
 import YouMightAlsoLike from "./YouMightAlsoLike";
 import MobileProductSwiper from "./MobileProductSwiper";
 import "./productDetails.css";
+import { useParams } from "react-router-dom";
 
-const ProductDetails = () => {
-    // const productId = useParams("id");
+const ProductDetails = ({ data }) => {
+    const { id } = useParams();
     const radioRef = useRef(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [currentThumb, setCurrentThumb] = useState(
-        "/Retro/new_img_main_guigju"
+
+    const filteredProduct = data.filter((p) => p.id.toString() === id);
+    // const initialThumb = filteredProduct.map((p) => p.main_img);
+    const initialThumb = filteredProduct.map((p) => p.images[0]);
+    const [currentThumb, setCurrentThumb] = useState(initialThumb);
+    const currentGender = filteredProduct.map((p) => p.gender);
+
+    const youMightAlsoLike = data.filter(
+        (product) =>
+            product.gender === currentGender[0] && product.id.toString() !== id
     );
+
+    //* handling browser's forward and back arrows
+    const handlePopstate = () => {
+        window.location.reload();
+    };
+    useEffect(() => {
+        window.addEventListener("popstate", handlePopstate);
+
+        return () => {
+            window.removeEventListener("popstate", handlePopstate);
+        };
+    }, []);
 
     const handelModal = () => {
         setIsModalOpen(!isModalOpen);
@@ -21,37 +41,6 @@ const ProductDetails = () => {
     const formControl = (e) => {
         e.preventDefault();
     };
-
-    const data = [
-        {
-            id: 0,
-            name: "product name",
-            img: "/Retro/new_img_main_guigju",
-            category: "category",
-            price: 0,
-        },
-        {
-            id: 1,
-            name: "product name",
-            img: "/Retro/new_img_main_guigju",
-            category: "category",
-            price: 0,
-        },
-        {
-            id: 2,
-            name: "product name",
-            img: "/Retro/new_img_main_guigju",
-            category: "category",
-            price: 0,
-        },
-        {
-            id: 3,
-            name: "product name",
-            img: "/Retro/new_img_main_guigju",
-            category: "category",
-            price: 0,
-        },
-    ];
 
     const handelThumbnail = (value) => {
         setCurrentThumb(value);
@@ -67,28 +56,23 @@ const ProductDetails = () => {
         <section>
             <div className="max-w-[1200px] mx-auto flex tablet:flex-row flex-col">
                 {/* For Mobile */}
-                <MobileProductSwiper data={data} />
+                <MobileProductSwiper data={filteredProduct} />
                 {/* For Desktop */}
                 <Thumbnail
                     handleMouseOver={handleMouseOver}
                     radioRef={radioRef}
                     currentThumb={currentThumb}
-                    data={data}
+                    data={filteredProduct}
                 />
                 <ProductInfo
                     formControl={formControl}
                     handelModal={handelModal}
+                    isModalOpen={isModalOpen}
+                    data={filteredProduct}
                 />
             </div>
-            {/* Modal */}
-            <Modal handelModal={handelModal} isModalOpen={isModalOpen}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste
-                dolor aliquam accusantium ratione laudantium odit! Assumenda
-                ipsam dolorem quibusdam quidem ullam aperiam sint aliquid
-            </Modal>
             {/* Swiper part  */}
-            <YouMightAlsoLike data={data} />
+            <YouMightAlsoLike data={youMightAlsoLike} />
         </section>
     );
 };

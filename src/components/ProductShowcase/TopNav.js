@@ -16,12 +16,12 @@ const TopNav = ({
 
     return (
         <div
-            className={`flex tablet:flex-row flex-col tablet:px-0 px-4  tablet:items-center w-full tablet:h-[60px] h-auto ${
+            className={`flex tablet:flex-row flex-col tablet:px-0 px-4 tablet:py-0 py-4 tablet:items-center w-full tablet:h-[60px] h-auto ${
                 scrollY >= 20
-                    ? "fixed top-0 left-0 tablet:px-[3rem]"
+                    ? "fixed top-0 left-0 tablet:px-[3rem] z-10"
                     : "relative"
             } ${
-                search ? "z-[1]" : "z-10"
+                search ? "z-[1]" : null
             } tablet:border-none border-b-2 bg-white`}
         >
             <div>
@@ -34,13 +34,13 @@ const TopNav = ({
                 <nav className="tablet:hidden block">
                     <ul className="flex">
                         <li className="pr-5 font-semibold  hover:opacity-50">
-                            <Link>Clothings</Link>
+                            <Link to="/product">Clothings</Link>
                         </li>
                         <li className="pr-5 font-semibold  hover:opacity-50">
-                            <Link>Shoes</Link>
+                            <Link to="/product">Shoes</Link>
                         </li>
                         <li className="pr-5 font-semibold hover:opacity-50">
-                            <Link>Accessories</Link>
+                            <Link to="/product">Accessories</Link>
                         </li>
                     </ul>
                 </nav>

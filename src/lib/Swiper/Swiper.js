@@ -78,7 +78,7 @@ export function CardSwiperLg({ arr, slidesNumber, path }) {
 }
 
 //! Product swiper
-export function ProductCardSwiper({ arr, slidesNumber }) {
+export function ProductCardSwiper({ arr, slidesNumber, path }) {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth <= 960);
 
     useEffect(() => {
@@ -90,8 +90,15 @@ export function ProductCardSwiper({ arr, slidesNumber }) {
     });
 
     const slides = arr.map((item) => (
-        <SwiperSlide key={item.id} className="w-full">
-            <ProductSwiperSlides item={item} />
+        <SwiperSlide
+            key={item.id}
+            className="w-full"
+            onClick={() => window.location.reload()}
+        >
+            <ProductSwiperSlides
+                item={item}
+                path={`/singleProduct/${item.id}`}
+            />
         </SwiperSlide>
     ));
 
@@ -119,11 +126,13 @@ export function ProductMobileCardSwiper({ arr, slidesNumber }) {
         return () => window.removeEventListener("resize", handleWidth);
     });
 
-    const slides = arr.map((item) => (
-        <SwiperSlide key={item.id} className="w-full h-full">
-            <ProductMobileSwiperSlides item={item} />
-        </SwiperSlide>
-    ));
+    const slides = arr.map((item) =>
+        item.images.map((img, index) => (
+            <SwiperSlide key={index} className="w-full h-full">
+                <ProductMobileSwiperSlides item={img} img={img} />
+            </SwiperSlide>
+        ))
+    );
 
     const swiper = (
         <Swiper

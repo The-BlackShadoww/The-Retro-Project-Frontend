@@ -50,12 +50,12 @@ export const SwiperSlidesLayard = ({ item, windowWidth, path }) => {
 };
 
 //!--------- Card 3 ---------
-export const ProductSwiperSlides = ({ item, windowWidth }) => {
+export const ProductSwiperSlides = ({ item, windowWidth, path }) => {
     const cards = (
-        <Link to={item.path}>
+        <Link to={item.path ? item.path : path}>
             <div className="relative w-[97%]">
                 <div className={``}>
-                    <ProductImg img={item.img} />
+                    <ProductImg img={item.main_img} />
                 </div>
                 <div className="md:bottom-10 md:left-10 text-black">
                     <h2 className="text-lg font-medium">{item.name}</h2>
@@ -72,11 +72,11 @@ export const ProductSwiperSlides = ({ item, windowWidth }) => {
     return <div>{cards}</div>;
 };
 
-export const ProductMobileSwiperSlides = ({ item, windowWidth }) => {
+export const ProductMobileSwiperSlides = ({ item, windowWidth, img }) => {
     const cards = (
         <div className="relative w-[100%]">
             <div className={``}>
-                <ProductImg img={item.img} />
+                <ProductImg img={img} />
             </div>
         </div>
     );

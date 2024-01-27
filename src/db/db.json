@@ -281,18 +281,19 @@
     "products": [
         {
             "id": 0,
-            "name": "Product Name",
-            "price": 0,
+            "name": "Men's Shoe 1",
+            "price": 150,
             "category": "shoes",
             "categoryId": "#shoes%",
             "gender": "men",
-            "img": {
-                "main_img": "/Retro/new_img_main_guigju",
-                "img_2": "/Retro/new_img_4_viquzm",
-                "img_3": "/Retro/new_img_3_s4mgzb",
-                "img_4": "/Retro/new_img_2_ihhj8j",
-                "img_5": "/Retro/new_img_5_dnluvy"
-            },
+            "main_img": "/Retro/new_img_main_guigju",
+            "images": [
+                "/Retro/new_img_main_guigju",
+                "/Retro/new_img_4_viquzm",
+                "/Retro/new_img_3_s4mgzb",
+                "/Retro/new_img_2_ihhj8j",
+                "/Retro/new_img_5_dnluvy"
+            ],
             "colors": {
                 "black": {
                     "main_img": "/Retro/new_img_main_guigju",
@@ -313,29 +314,30 @@
             "arrival": "new",
             "details": "Some details about the product",
             "for_age": "old",
-            "path": "/singleProduct"
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
         },
         {
             "id": 1,
-            "name": "Product Name",
-            "price": 0,
-            "category": "clothing",
-            "categoryId": "#clothing%",
-            "gender": "women",
-            "img": {
-                "main_img": "/Retro/women_c_new_main_jnezpp",
-                "img_2": "/Retro/women_c_new_3_crqeoo",
-                "img_3": "/Retro/women_c_new_2_jhjhpx",
-                "img_4": "/Retro/women_c_new_5_fcqwph",
-                "img_5": "/Retro/women_c_new_4_jm352m"
-            },
+            "name": "Men's Shoe 2",
+            "price": 199,
+            "category": "shoes",
+            "categoryId": "#shoes%",
+            "gender": "men",
+            "main_img": "/Retro/men_s_2_img_1_aqb3ci",
+            "images": [
+                "/Retro/men_s_2_img_1_aqb3ci",
+                "/Retro/men_s_2_img_2_eua0ax",
+                "/Retro/men_s_2_img_3_dk69ap",
+                "/Retro/men_s_2_img_4_xbv4gv",
+                "/Retro/men_s_2_img_5_iwtecd"
+            ],
             "colors": {
                 "black": {
-                    "main_img": "/Retro/women_c_new_main_jnezpp",
-                    "img_2": "/Retro/women_c_new_3_crqeoo",
-                    "img_3": "/Retro/women_c_new_2_jhjhpx",
-                    "img_4": "/Retro/women_c_new_5_fcqwph",
-                    "img_5": "/Retro/women_c_new_4_jm352m"
+                    "main_img": "/Retro/new_img_main_guigju",
+                    "img_2": "/Retro/new_img_4_viquzm",
+                    "img_3": "/Retro/new_img_3_s4mgzb",
+                    "img_4": "/Retro/new_img_2_ihhj8j",
+                    "img_5": "/Retro/new_img_5_dnluvy"
                 },
                 "brown": {
                     "main_img": "/Retro/men_new_s_main_f2fq1c",
@@ -348,189 +350,121 @@
             "kids": "non",
             "arrival": "new",
             "details": "Some details about the product",
-            "for_age": "adult",
-            "path": ""
+            "for_age": "old",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
         },
         {
             "id": 2,
-            "name": "Product Name",
-            "price": 0,
-            "category": "accessories",
-            "categoryId": "#accessories%",
-            "gender": "",
-            "img": {
-                "main_img": "/Retro/new_k_b_acc_main_btmuuq",
-                "img_2": "/Retro/new_k_b_acc_5_o6ragn",
-                "img_3": "/Retro/new_k_b_acc_4_p7rxxn",
-                "img_4": "/Retro/new_k_b_acc_3_trmipe",
-                "img_5": "/Retro/new_k_b_acc_2_rgxusb"
-            },
+            "name": "Men's Jacket",
+            "price": 145,
+            "category": "clothing",
+            "categoryId": "#clothing%",
+            "gender": "men",
+            "main_img": "/Retro/men_c_2_img_1_m77myl",
+            "images": [
+                "/Retro/men_c_2_img_1_m77myl",
+                "/Retro/men_c_2_img_2_vrqumm",
+                "/Retro/men_c_2_img_3_pf3sgc",
+                "/Retro/men_c_2_img_4_ypnla8",
+                "/Retro/men_c_2_img_5_q85nxa"
+            ],
             "colors": {
                 "black": {
-                    "main_img": "/Retro/new_k_b_acc_main_btmuuq",
-                    "img_2": "/Retro/new_k_b_acc_5_o6ragn",
-                    "img_3": "/Retro/new_k_b_acc_4_p7rxxn",
-                    "img_4": "/Retro/new_k_b_acc_3_trmipe",
-                    "img_5": "/Retro/new_k_b_acc_2_rgxusb"
+                    "main_img": "/Retro/new_img_main_guigju",
+                    "img_2": "/Retro/new_img_4_viquzm",
+                    "img_3": "/Retro/new_img_3_s4mgzb",
+                    "img_4": "/Retro/new_img_2_ihhj8j",
+                    "img_5": "/Retro/new_img_5_dnluvy"
+                },
+                "brown": {
+                    "main_img": "/Retro/men_new_s_main_f2fq1c",
+                    "img_2": "/Retro/men_new_s_5_himjw6",
+                    "img_3": "/Retro/men_new_s_4_hwrzm1",
+                    "img_4": "/Retro/men_new_s_3_ywvgxk",
+                    "img_5": "/Retro/men_new_s_2_stnfiu"
                 }
             },
-            "kids": "boy",
+            "kids": "non",
             "arrival": "new",
             "details": "Some details about the product",
-            "for_age": "kid",
-            "path": ""
+            "for_age": "old",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
         },
         {
             "id": 3,
-            "name": "Product Name",
-            "price": 0,
-            "category": "shoes",
-            "categoryId": "#shoes%",
+            "name": "Mens's T-Shirt",
+            "price": 20,
+            "category": "clothing",
+            "categoryId": "#clothing%",
             "gender": "men",
-            "img": {
-                "main_img": "/Retro/new_img_main_guigju",
-                "img_2": "/Retro/new_img_4_viquzm",
-                "img_3": "/Retro/new_img_3_s4mgzb",
-                "img_4": "/Retro/new_img_2_ihhj8j",
-                "img_5": "/Retro/new_img_5_dnluvy"
-            },
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/new_img_main_guigju",
-                    "img_2": "/Retro/new_img_4_viquzm",
-                    "img_3": "/Retro/new_img_3_s4mgzb",
-                    "img_4": "/Retro/new_img_2_ihhj8j",
-                    "img_5": "/Retro/new_img_5_dnluvy"
-                },
-                "brown": {
-                    "main_img": "/Retro/men_new_s_main_f2fq1c",
-                    "img_2": "/Retro/men_new_s_5_himjw6",
-                    "img_3": "/Retro/men_new_s_4_hwrzm1",
-                    "img_4": "/Retro/men_new_s_3_ywvgxk",
-                    "img_5": "/Retro/men_new_s_2_stnfiu"
-                }
-            },
+            "main_img": "/Retro/men_c_1_img_1_pdmuli",
+            "images": [
+                "/Retro/men_c_1_img_1_pdmuli",
+                "/Retro/men_c_1_img_2_zn8xe3",
+                "/Retro/men_c_1_img_3_hdziec",
+                "/Retro/men_c_1_img_4_gor2nk",
+                "/Retro/men_c_1_img_5_rkbanp"
+            ],
+            "colors": {},
             "kids": "non",
             "arrival": "new",
             "details": "Some details about the product",
             "for_age": "old",
-            "path": "/men"
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
         },
         {
             "id": 4,
-            "name": "Product Name",
-            "price": 0,
-            "category": "clothing",
-            "categoryId": "#clothing%",
-            "gender": "women",
-            "img": {
-                "main_img": "/Retro/women_c_new_main_jnezpp",
-                "img_2": "/Retro/women_c_new_3_crqeoo",
-                "img_3": "/Retro/women_c_new_2_jhjhpx",
-                "img_4": "/Retro/women_c_new_5_fcqwph",
-                "img_5": "/Retro/women_c_new_4_jm352m"
-            },
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/women_c_new_main_jnezpp",
-                    "img_2": "/Retro/women_c_new_3_crqeoo",
-                    "img_3": "/Retro/women_c_new_2_jhjhpx",
-                    "img_4": "/Retro/women_c_new_5_fcqwph",
-                    "img_5": "/Retro/women_c_new_4_jm352m"
-                },
-                "brown": {
-                    "main_img": "/Retro/men_new_s_main_f2fq1c",
-                    "img_2": "/Retro/men_new_s_5_himjw6",
-                    "img_3": "/Retro/men_new_s_4_hwrzm1",
-                    "img_4": "/Retro/men_new_s_3_ywvgxk",
-                    "img_5": "/Retro/men_new_s_2_stnfiu"
-                }
-            },
-            "kids": "non",
-            "arrival": "new",
-            "details": "Some details about the product",
-            "for_age": "adult",
-            "path": ""
-        },
-        {
-            "id": 5,
-            "name": "Product Name",
-            "price": 0,
+            "name": "Men's Sunglass",
+            "price": 30,
             "category": "accessories",
             "categoryId": "#accessories%",
-            "gender": "",
-            "img": {
-                "main_img": "/Retro/new_k_b_acc_main_btmuuq",
-                "img_2": "/Retro/new_k_b_acc_5_o6ragn",
-                "img_3": "/Retro/new_k_b_acc_4_p7rxxn",
-                "img_4": "/Retro/new_k_b_acc_3_trmipe",
-                "img_5": "/Retro/new_k_b_acc_2_rgxusb"
-            },
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/new_k_b_acc_main_btmuuq",
-                    "img_2": "/Retro/new_k_b_acc_5_o6ragn",
-                    "img_3": "/Retro/new_k_b_acc_4_p7rxxn",
-                    "img_4": "/Retro/new_k_b_acc_3_trmipe",
-                    "img_5": "/Retro/new_k_b_acc_2_rgxusb"
-                }
-            },
-            "kids": "boy",
-            "arrival": "new",
-            "details": "Some details about the product",
-            "for_age": "kid",
-            "path": ""
-        },
-        {
-            "id": 6,
-            "name": "Product Name",
-            "price": 0,
-            "category": "shoes",
-            "categoryId": "#shoes%",
             "gender": "men",
-            "img": {
-                "main_img": "/Retro/new_img_main_guigju",
-                "img_2": "/Retro/new_img_4_viquzm",
-                "img_3": "/Retro/new_img_3_s4mgzb",
-                "img_4": "/Retro/new_img_2_ihhj8j",
-                "img_5": "/Retro/new_img_5_dnluvy"
-            },
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/new_img_main_guigju",
-                    "img_2": "/Retro/new_img_4_viquzm",
-                    "img_3": "/Retro/new_img_3_s4mgzb",
-                    "img_4": "/Retro/new_img_2_ihhj8j",
-                    "img_5": "/Retro/new_img_5_dnluvy"
-                },
-                "brown": {
-                    "main_img": "/Retro/men_new_s_main_f2fq1c",
-                    "img_2": "/Retro/men_new_s_5_himjw6",
-                    "img_3": "/Retro/men_new_s_4_hwrzm1",
-                    "img_4": "/Retro/men_new_s_3_ywvgxk",
-                    "img_5": "/Retro/men_new_s_2_stnfiu"
-                }
-            },
+            "main_img": "/Retro/men_acc_img_1",
+            "images": [
+                "/Retro/men_acc_img_1",
+                "/Retro/men_acc_img_2",
+                "/Retro/men_acc_img_3_faujgg",
+                "/Retro/men_acc_img_4_j0b1bs",
+                "/Retro/men_acc_img_5_nspr84"
+            ],
+            "colors": {},
             "kids": "non",
             "arrival": "new",
             "details": "Some details about the product",
             "for_age": "old",
-            "path": "/men"
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
         },
         {
-            "id": 7,
-            "name": "Product Name",
-            "price": 0,
+            "id": 5,
+            "name": "Men's Gloves",
+            "price": 25,
+            "category": "accessories",
+            "categoryId": "#accessories%",
+            "gender": "men",
+            "main_img": "/Retro/men_acc_2_img_1",
+            "images": ["/Retro/men_acc_2_img_1", "/Retro/men_acc_2_img_2"],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "old",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 6,
+            "name": "Women's Jacket 1",
+            "price": 160,
             "category": "clothing",
             "categoryId": "#clothing%",
             "gender": "women",
-            "img": {
-                "main_img": "/Retro/women_c_new_main_jnezpp",
-                "img_2": "/Retro/women_c_new_3_crqeoo",
-                "img_3": "/Retro/women_c_new_2_jhjhpx",
-                "img_4": "/Retro/women_c_new_5_fcqwph",
-                "img_5": "/Retro/women_c_new_4_jm352m"
-            },
+            "main_img": "/Retro/women_c_new_main_jnezpp",
+            "images": [
+                "/Retro/women_c_new_main_jnezpp",
+                "/Retro/women_c_new_3_crqeoo",
+                "/Retro/women_c_new_2_jhjhpx",
+                "/Retro/women_c_new_2_jhjhpx",
+                "/Retro/women_c_new_4_jm352m"
+            ],
             "colors": {
                 "black": {
                     "main_img": "/Retro/women_c_new_main_jnezpp",
@@ -551,36 +485,246 @@
             "arrival": "new",
             "details": "Some details about the product",
             "for_age": "adult",
-            "path": ""
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 7,
+            "name": "Women's Jacket 2",
+            "price": 200,
+            "category": "clothing",
+            "categoryId": "#clothing%",
+            "gender": "women",
+            "main_img": "/Retro/women_c_2_img_1_mgj7si",
+            "images": [
+                "/Retro/women_c_2_img_1_mgj7si",
+                "/Retro/women_c_2_img_2_n8pst3",
+                "/Retro/women_c_2_img_3_otsnjj",
+                "/Retro/women_c_2_img_4_xooaeg",
+                "/Retro/women_c_2_img_5_rwusih"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
         },
         {
             "id": 8,
-            "name": "Product Name",
-            "price": 0,
+            "name": "Women's Shoe 1",
+            "price": 125,
+            "category": "shoes",
+            "categoryId": "#shoes%",
+            "gender": "women",
+            "main_img": "/Retro/women_s_1_img_1_kunkca",
+            "images": [
+                "/Retro/women_s_1_img_1_kunkca",
+                "/Retro/women_s_1_img_2_lbhwxs",
+                "/Retro/women_s_1_img_3_wji2fj",
+                "/Retro/women_s_1_img_4_s8v9ol",
+                "/Retro/women_s_1_img_5_q8o7sb"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 9,
+            "name": "Women's Shoe 2",
+            "price": 145,
+            "category": "shoes",
+            "categoryId": "#shoes%",
+            "gender": "women",
+            "main_img": "/Retro/women_s_2_img_1_mspeoe",
+            "images": [
+                "/Retro/women_s_2_img_1_mspeoe",
+                "/Retro/women_s_2_img_2_tubrk6",
+                "/Retro/women_s_2_img_3_dxuo55",
+                "/Retro/women_s_2_img_4_pjzmtn",
+                "/Retro/women_s_2_img_5_mdit0r"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 10,
+            "name": "Women's Bag",
+            "price": 100,
             "category": "accessories",
             "categoryId": "#accessories%",
-            "gender": "",
-            "img": {
-                "main_img": "/Retro/new_k_b_acc_main_btmuuq",
-                "img_2": "/Retro/new_k_b_acc_5_o6ragn",
-                "img_3": "/Retro/new_k_b_acc_4_p7rxxn",
-                "img_4": "/Retro/new_k_b_acc_3_trmipe",
-                "img_5": "/Retro/new_k_b_acc_2_rgxusb"
-            },
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/new_k_b_acc_main_btmuuq",
-                    "img_2": "/Retro/new_k_b_acc_5_o6ragn",
-                    "img_3": "/Retro/new_k_b_acc_4_p7rxxn",
-                    "img_4": "/Retro/new_k_b_acc_3_trmipe",
-                    "img_5": "/Retro/new_k_b_acc_2_rgxusb"
-                }
-            },
+            "gender": "women",
+            "main_img": "/Retro/women_acc_1_img_1_rllm4q",
+            "images": [
+                "/Retro/women_acc_1_img_1_rllm4q",
+                "/Retro/women_acc_1_img_2_j6jwqw",
+                "/Retro/women_acc_1_img_3_jkdobn",
+                "/Retro/women_acc_1_img_4_aml5fb",
+                "/Retro/women_acc_1_img_5_tkenxc"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 11,
+            "name": "Women's Sunglass",
+            "price": 50,
+            "category": "accessories",
+            "categoryId": "#accessories%",
+            "gender": "women",
+            "main_img": "/Retro/women_acc_2_img_1_tpykkv",
+            "images": [
+                "/Retro/women_acc_2_img_1_tpykkv",
+                "/Retro/women_acc_2_img_2_ca4ifo",
+                "/Retro/women_acc_2_img_3_uriv36",
+                "/Retro/women_acc_2_img_4_fcxqzi",
+                "/Retro/women_acc_2_img_5_qr8eyg"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 12,
+            "name": "Kid's Shoe 1",
+            "price": 120,
+            "category": "shoes",
+            "categoryId": "#shoes%",
+            "gender": "kids",
+            "main_img": "/Retro/kids_s_1_img_1_l9pm3p",
+            "images": [
+                "/Retro/kids_s_1_img_1_l9pm3p",
+                "/Retro/kids_s_1_img_2_ow7sj7",
+                "/Retro/kids_s_1_img_3_ukfjd2",
+                "/Retro/kids_s_1_img_4_one674",
+                "/Retro/kids_s_1_img_5_jqujck"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 13,
+            "name": "Kid's Shoe 2",
+            "price": 125,
+            "category": "shoes",
+            "categoryId": "#shoes%",
+            "gender": "kids",
+            "main_img": "/Retro/kids_s_2_img_1_fcgzgv",
+            "images": [
+                "/Retro/kids_s_2_img_1_fcgzgv",
+                "/Retro/kids_s_2_img_2_rjkq8a",
+                "/Retro/kids_s_2_img_3_qnmid7",
+                "/Retro/kids_s_2_img_4_lbon2c",
+                "/Retro/kids_s_2_img_5_glszw8"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 14,
+            "name": "Boy's T-Shirt",
+            "price": 35,
+            "category": "clothing",
+            "categoryId": "#clothing%",
+            "gender": "kids",
+            "main_img": "/Retro/kids_c_1_img_1_nydfwo",
+            "images": [
+                "/Retro/kids_c_1_img_1_nydfwo",
+                "/Retro/kids_c_1_img_2_mieymk",
+                "/Retro/kids_c_1_img_3_lqp71s",
+                "/Retro/kids_c_1_img_4_rbqtfb",
+                "/Retro/kids_c_1_img_5_oqq5vf"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 15,
+            "name": "Girl's Jacket",
+            "price": 115,
+            "category": "clothing",
+            "categoryId": "#clothing%",
+            "gender": "kids",
+            "main_img": "/Retro/kids_c_2_img_1_qszpdh",
+            "images": [
+                "/Retro/kids_c_2_img_1_qszpdh",
+                "/Retro/kids_c_2_img_2_q5zric",
+                "/Retro/kids_c_2_img_3_i60gkp",
+                "/Retro/kids_c_2_img_4_nvm5ua",
+                "/Retro/kids_c_2_img_5_o3lnre"
+            ],
+            "colors": {},
+            "kids": "non",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "adult",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 16,
+            "name": "Kid's Cap",
+            "price": 15,
+            "category": "accessories",
+            "categoryId": "#accessories%",
+            "gender": "kids",
+            "main_img": "/Retro/new_k_b_acc_main_btmuuq",
+            "images": [
+                "/Retro/new_k_b_acc_main_btmuuq",
+                "/Retro/new_k_b_acc_5_o6ragn",
+                "/Retro/new_k_b_acc_4_p7rxxn",
+                "/Retro/new_k_b_acc_3_trmipe",
+                "/Retro/new_k_b_acc_2_rgxusb"
+            ],
+            "colors": {},
             "kids": "boy",
             "arrival": "new",
             "details": "Some details about the product",
             "for_age": "kid",
-            "path": ""
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
+        },
+        {
+            "id": 17,
+            "name": "Football",
+            "price": 50,
+            "category": "accessories",
+            "categoryId": "#accessories%",
+            "gender": "kids",
+            "main_img": "/Retro/kids_acc_2_img_1_b4txev",
+            "images": [
+                "/Retro/kids_acc_2_img_1_b4txev",
+                "/Retro/kids_acc_2_img_2_itga2i"
+            ],
+            "colors": {},
+            "kids": "boy",
+            "arrival": "new",
+            "details": "Some details about the product",
+            "for_age": "kid",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!"
         }
     ],
 
