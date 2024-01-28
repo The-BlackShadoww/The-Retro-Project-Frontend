@@ -14,8 +14,7 @@ const ShopByPrice = ({
         is50_100Checked: is50_100Checked,
         isOver100Checked: isOver100Checked,
     };
-    console.log(data);
-    
+
     return (
         <div className={`pt-3 pb-6 font-medium`}>
             <h4>Shop By Price</h4>

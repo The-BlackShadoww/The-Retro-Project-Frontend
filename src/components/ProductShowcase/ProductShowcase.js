@@ -31,13 +31,34 @@ const ProductShowcase = ({ data }) => {
     };
 
     useEffect(() => {
+        if (isMenChecked || isWomenChecked || isKidsChecked) {
+            handleGenders();
+        } else if (
+            is0_25Checked ||
+            is25_50Checked ||
+            is50_100Checked ||
+            isOver100Checked
+        ) {
+            handlePrice();
+        } else {
+            setProducts(data);
+        }
+        // window
         window.addEventListener("resize", handleResize);
         window.addEventListener("scroll", controlScrollY);
 
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+    }, [
+        isMenChecked,
+        isWomenChecked,
+        isKidsChecked,
+        is0_25Checked,
+        is25_50Checked,
+        is50_100Checked,
+        isOver100Checked,
+    ]);
 
     const handleSort = () => {
         setIsSortOpen(!isSortOpen);
@@ -51,6 +72,7 @@ const ProductShowcase = ({ data }) => {
         setIsTabFilterOpen(!isTabFilterOpen);
     };
 
+    //! Gender
     const handleGenders = () => {
         let filteredProducts = data;
 
@@ -67,9 +89,81 @@ const ProductShowcase = ({ data }) => {
         setProducts([...filteredProducts]);
     };
 
-    //* This function will work in Gender and ShopByPrice component
+    //! price
+    const handlePrice = () => {
+        let filteredProducts = data;
+
+        if (
+            is0_25Checked ||
+            is25_50Checked ||
+            is50_100Checked ||
+            isOver100Checked
+        ) {
+            filteredProducts = filteredProducts.filter((product) => {
+                return (
+                    (is0_25Checked && product.price <= 25) ||
+                    (is25_50Checked &&
+                        product.price >= 25 &&
+                        product.price <= 50) ||
+                    (is50_100Checked &&
+                        product.price >= 50 &&
+                        product.price <= 100) ||
+                    (isOver100Checked && product.price > 100)
+                );
+            });
+        }
+
+        setProducts([...filteredProducts]);
+    };
+
+    // const handlePrice = () => {
+    //     let filteredProducts = data;
+
+    //     if (isMenChecked || isWomenChecked || isKidsChecked) {
+    //         filteredProducts.filter((product) => {
+    //             return (
+    //                 ((isMenChecked && product.gender === "men") ||
+    //                     (isWomenChecked && product.gender === "women") ||
+    //                     (isKidsChecked && product.gender === "kids")) &&
+    //                 ((is0_25Checked && product.price <= 25) ||
+    //                     (is25_50Checked &&
+    //                         product.price >= 25 &&
+    //                         product.price <= 50) ||
+    //                     (is50_100Checked &&
+    //                         product.price >= 50 &&
+    //                         product.price <= 100) ||
+    //                     (isOver100Checked && product.price > 100))
+    //             );
+    //         });
+
+    //         // setProducts([...filteredProducts]);
+    //     } else if (
+    //         is0_25Checked ||
+    //         is25_50Checked ||
+    //         is50_100Checked ||
+    //         isOver100Checked
+    //     ) {
+    //         filteredProducts = filteredProducts.filter((product) => {
+    //             return (
+    //                 (is0_25Checked && product.price <= 25) ||
+    //                 (is25_50Checked &&
+    //                     product.price >= 25 &&
+    //                     product.price <= 50) ||
+    //                 (is50_100Checked &&
+    //                     product.price >= 50 &&
+    //                     product.price <= 100) ||
+    //                 (isOver100Checked && product.price > 100)
+    //             );
+    //         });
+    //     }
+
+    //     setProducts([...filteredProducts]);
+    // };
+
+    //! Checks
+
     const handleCheck = (e) => {
-        let name = e.target.name;
+        // let name = e.target.name;
         let id = e.target.id;
 
         if (id === "men") {
@@ -78,36 +172,43 @@ const ProductShowcase = ({ data }) => {
             setIsWomenChecked(e.target.checked);
         } else if (id === "kids") {
             setIsKidsChecked(e.target.checked);
+        } else if (id === "0_25") {
+            setIs0_25Checked(e.target.checked);
+        } else if (id === "25_50") {
+            setIs25_50Checked(e.target.checked);
+        } else if (id === "50_100") {
+            setIs50_100Checked(e.target.checked);
+        } else if (id === "over_100") {
+            setIsOver100Checked(e.target.checked);
         }
-
-        // handleGenders();
     };
 
-    useEffect(() => {
-        handleGenders();
-    }, [isMenChecked, isWomenChecked, isKidsChecked]);
-
+    //! Categories
     const handleCategories = (e) => {
         const category = e.target.value;
+        let categoryProducts;
 
-        if (category === "clothing") {
-            let clothing = data.filter(
-                (product) => product.category === "clothing"
-            );
+        if (isMenChecked || isWomenChecked || isKidsChecked) {
+            categoryProducts = data.filter((product) => {
+                return (
+                    (isMenChecked &&
+                        product.category === category &&
+                        product.gender === "men") ||
+                    (isWomenChecked &&
+                        product.category === category &&
+                        product.gender === "women") ||
+                    (isKidsChecked &&
+                        product.category === category &&
+                        product.gender === "kids")
+                );
+            });
 
-            setProducts([...clothing]);
-        } else if (category === "shoes") {
-            let shoes = data.filter((product) => product.category === "shoes");
-
-            setProducts([...shoes]);
-        } else if (category === "accessories") {
-            let accessories = data.filter(
-                (product) => product.category === "accessories"
-            );
-
-            setProducts([...accessories]);
+            setProducts([...categoryProducts]);
         } else {
-            setProducts(data);
+            categoryProducts = data.filter(
+                (product) => product.category === category
+            );
+            setProducts([...categoryProducts]);
         }
     };
 

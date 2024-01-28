@@ -14,6 +14,7 @@ const LeftSideNav = ({
     isOver100Checked,
     handleCheck,
     onCategoryChange,
+    onPriceChange,
 }) => {
     return (
         <div
