@@ -90,54 +90,10 @@ const ProductShowcase = ({ data }) => {
     };
 
     //! price
-    const handlePrice = () => {
-        let filteredProducts = data;
-
-        if (
-            is0_25Checked ||
-            is25_50Checked ||
-            is50_100Checked ||
-            isOver100Checked
-        ) {
-            filteredProducts = filteredProducts.filter((product) => {
-                return (
-                    (is0_25Checked && product.price <= 25) ||
-                    (is25_50Checked &&
-                        product.price >= 25 &&
-                        product.price <= 50) ||
-                    (is50_100Checked &&
-                        product.price >= 50 &&
-                        product.price <= 100) ||
-                    (isOver100Checked && product.price > 100)
-                );
-            });
-        }
-
-        setProducts([...filteredProducts]);
-    };
-
     // const handlePrice = () => {
     //     let filteredProducts = data;
 
-    //     if (isMenChecked || isWomenChecked || isKidsChecked) {
-    //         filteredProducts.filter((product) => {
-    //             return (
-    //                 ((isMenChecked && product.gender === "men") ||
-    //                     (isWomenChecked && product.gender === "women") ||
-    //                     (isKidsChecked && product.gender === "kids")) &&
-    //                 ((is0_25Checked && product.price <= 25) ||
-    //                     (is25_50Checked &&
-    //                         product.price >= 25 &&
-    //                         product.price <= 50) ||
-    //                     (is50_100Checked &&
-    //                         product.price >= 50 &&
-    //                         product.price <= 100) ||
-    //                     (isOver100Checked && product.price > 100))
-    //             );
-    //         });
-
-    //         // setProducts([...filteredProducts]);
-    //     } else if (
+    //     if (
     //         is0_25Checked ||
     //         is25_50Checked ||
     //         is50_100Checked ||
@@ -159,6 +115,50 @@ const ProductShowcase = ({ data }) => {
 
     //     setProducts([...filteredProducts]);
     // };
+
+    const handlePrice = () => {
+        let filteredProducts = data;
+
+        if (isMenChecked || isWomenChecked || isKidsChecked) {
+            filteredProducts.filter((product) => {
+                return (
+                    ((isMenChecked && product.gender === "men") ||
+                        (isWomenChecked && product.gender === "women") ||
+                        (isKidsChecked && product.gender === "kids")) &&
+                    ((is0_25Checked && product.price <= 25) ||
+                        (is25_50Checked &&
+                            product.price >= 25 &&
+                            product.price <= 50) ||
+                        (is50_100Checked &&
+                            product.price >= 50 &&
+                            product.price <= 100) ||
+                        (isOver100Checked && product.price > 100))
+                );
+            });
+
+            setProducts([...filteredProducts]);
+        } else if (
+            is0_25Checked ||
+            is25_50Checked ||
+            is50_100Checked ||
+            isOver100Checked
+        ) {
+            filteredProducts = filteredProducts.filter((product) => {
+                return (
+                    (is0_25Checked && product.price <= 25) ||
+                    (is25_50Checked &&
+                        product.price >= 25 &&
+                        product.price <= 50) ||
+                    (is50_100Checked &&
+                        product.price >= 50 &&
+                        product.price <= 100) ||
+                    (isOver100Checked && product.price > 100)
+                );
+            });
+        }
+
+        setProducts([...filteredProducts]);
+    };
 
     //! Checks
 
@@ -215,8 +215,21 @@ const ProductShowcase = ({ data }) => {
     //! sorting
     const handleSort = (e) => {
         const sortTerm = e.target.value;
+        let sortedData;
 
-        
+        if (sortTerm === "high_low") {
+            sortedData = data.sort((a, b) => b.price - a.price);
+            handleSortToggle();
+        } else if (sortTerm === "low_high") {
+            sortedData = data.sort((a, b) => a.price - b.price);
+            handleSortToggle();
+        } else if (sortTerm === "newest") {
+            sortedData = data.sort(
+                (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+            );
+            handleSortToggle();
+        }
+        setProducts([...sortedData]);
     };
 
     let content = (
