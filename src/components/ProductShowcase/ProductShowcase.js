@@ -60,7 +60,7 @@ const ProductShowcase = ({ data }) => {
         isOver100Checked,
     ]);
 
-    const handleSort = () => {
+    const handleSortToggle = () => {
         setIsSortOpen(!isSortOpen);
     };
 
@@ -212,15 +212,23 @@ const ProductShowcase = ({ data }) => {
         }
     };
 
+    //! sorting
+    const handleSort = (e) => {
+        const sortTerm = e.target.value;
+
+        
+    };
+
     let content = (
         <div className="p-0 tablet:px-12 Poppins">
             <TopNav
                 scrollY={scrollY}
                 releasesNumber={releasesNumber}
                 handleFilter={handleFilter}
-                handleSort={handleSort}
+                handleSortToggle={handleSortToggle}
                 isFilter={isFilter}
                 isSortOpen={isSortOpen}
+                onSort={handleSort}
             />
 
             <TabFilter

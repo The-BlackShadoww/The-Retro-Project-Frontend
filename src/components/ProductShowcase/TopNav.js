@@ -8,9 +8,10 @@ const TopNav = ({
     scrollY,
     releasesNumber,
     handleFilter,
-    handleSort,
+    handleSortToggle,
     isFilter,
     isSortOpen,
+    onSort,
 }) => {
     const { search } = useContext(SearchContext);
 
@@ -58,7 +59,7 @@ const TopNav = ({
                 </button>
                 <button
                     className="tablet:flex hidden items-center text-lg"
-                    onClick={handleSort}
+                    onClick={handleSortToggle}
                 >
                     <span className="pr-2">Sort By</span>
                     {isSortOpen ? <RxCaretUp /> : <RxCaretDown />}
@@ -68,20 +69,55 @@ const TopNav = ({
                         isSortOpen ? "block" : "hidden"
                     }`}
                 >
-                    <ul>
-                        <li className="hover:opacity-50">
-                            <button>Featured</button>
-                        </li>
-                        <li className="hover:opacity-50">
-                            <button>Newest</button>
-                        </li>
-                        <li className="hover:opacity-50">
-                            <button>Price: High-Low </button>
-                        </li>
-                        <li className="hover:opacity-50">
-                            <button>Price: Low-High </button>
-                        </li>
-                    </ul>
+                    <form>
+                        <span className="hover:opacity-50">
+                            <input
+                                type="radio"
+                                name="sort"
+                                id="newest"
+                                value="newest"
+                                className="appearance-none"
+                                onChange={onSort}
+                            />
+                            <label htmlFor="newest" className="cursor-pointer">
+                                Newest
+                            </label>
+                        </span>
+                        <br />
+                        <span className="hover:opacity-50">
+                            <input
+                                type="radio"
+                                name="sort"
+                                id="high_low"
+                                value="high_low"
+                                className="appearance-none"
+                                onChange={onSort}
+                            />
+                            <label
+                                htmlFor="high_low"
+                                className="cursor-pointer"
+                            >
+                                Price: High-Low
+                            </label>
+                        </span>{" "}
+                        <br />
+                        <span className="hover:opacity-50">
+                            <input
+                                type="radio"
+                                name="sort"
+                                id="low_high"
+                                value="low_high"
+                                className="appearance-none"
+                                onChange={onSort}
+                            />
+                            <label
+                                htmlFor="low_high"
+                                className="cursor-pointer"
+                            >
+                                Price: Low-High
+                            </label>
+                        </span>
+                    </form>
                 </div>
             </div>
         </div>
