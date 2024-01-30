@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { RxCaretDown, RxCaretUp } from "react-icons/rx";
 import { FilterIcon } from "../../assests/icons/Icons";
-import { Link } from "react-router-dom";
 import { SearchContext } from "../../contexts";
 
 const TopNav = ({
@@ -12,6 +11,7 @@ const TopNav = ({
     isFilter,
     isSortOpen,
     onSort,
+    onCategoryChange,
 }) => {
     const { search } = useContext(SearchContext);
 
@@ -35,13 +35,52 @@ const TopNav = ({
                 <nav className="tablet:hidden block">
                     <ul className="flex">
                         <li className="pr-5 font-semibold  hover:opacity-50">
-                            <Link to="/product">Clothings</Link>
+                            <input
+                                type="radio"
+                                name="category"
+                                id="clothing"
+                                value="clothing"
+                                className="appearance-none"
+                                onChange={onCategoryChange}
+                            />
+                            <label
+                                htmlFor="clothing"
+                                className="cursor-pointer hover:opacity-50"
+                            >
+                                Clothings
+                            </label>
                         </li>
                         <li className="pr-5 font-semibold  hover:opacity-50">
-                            <Link to="/product">Shoes</Link>
+                            <input
+                                type="radio"
+                                name="category"
+                                id="shoes"
+                                value="shoes"
+                                className="appearance-none"
+                                onChange={onCategoryChange}
+                            />
+                            <label
+                                htmlFor="shoes"
+                                className="cursor-pointer hover:opacity-50"
+                            >
+                                Shoes
+                            </label>
                         </li>
-                        <li className="pr-5 font-semibold hover:opacity-50">
-                            <Link to="/product">Accessories</Link>
+                        <li className="pr-5 font-semibold  hover:opacity-50">
+                            <input
+                                type="radio"
+                                name="category"
+                                id="accessories"
+                                value="accessories"
+                                className="appearance-none"
+                                onChange={onCategoryChange}
+                            />
+                            <label
+                                htmlFor="accessories"
+                                className="cursor-pointer hover:opacity-50"
+                            >
+                                Accessories
+                            </label>
                         </li>
                     </ul>
                 </nav>

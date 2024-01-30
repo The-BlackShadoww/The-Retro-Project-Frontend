@@ -1,11 +1,24 @@
 import React from "react";
 import { FilterIcon } from "../../assests/icons/Icons";
+import { CloseIcon } from "../../assests/icons/Icons";
 import Gender from "./Gender";
 import ShopByPrice from "./ShopByPrice";
-import { CloseIcon } from "../../assests/icons/Icons";
 import SortBy from "./SortBy";
 
-const TabFilter = ({ isTabFilterOpen, handleTabFilter, releasesNumber }) => {
+const TabFilter = ({
+    isTabFilterOpen,
+    handleTabFilter,
+    releasesNumber,
+    isMenChecked,
+    isWomenChecked,
+    isKidsChecked,
+    handleCheck,
+    onSort,
+    is0_25Checked,
+    is25_50Checked,
+    is50_100Checked,
+    isOver100Checked,
+}) => {
     return (
         <div className="tablet:hidden block mt-3">
             <div className="flex justify-between items-center px-4">
@@ -33,11 +46,22 @@ const TabFilter = ({ isTabFilterOpen, handleTabFilter, releasesNumber }) => {
                         <CloseIcon />
                     </button>
                 </div>
-                <SortBy />
+                <SortBy onSort={onSort} />
                 <hr className="mb-4" />
-                <Gender />
+                <Gender
+                    isMenChecked={isMenChecked}
+                    isWomenChecked={isWomenChecked}
+                    isKidsChecked={isKidsChecked}
+                    handleCheck={handleCheck}
+                />
                 <hr className="mb-4" />
-                <ShopByPrice />
+                <ShopByPrice
+                    is0_25Checked={is0_25Checked}
+                    is25_50Checked={is25_50Checked}
+                    is50_100Checked={is50_100Checked}
+                    isOver100Checked={isOver100Checked}
+                    handleCheck={handleCheck}
+                />
             </div>
         </div>
     );

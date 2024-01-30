@@ -181,6 +181,8 @@ const ProductShowcase = ({ data }) => {
         } else if (id === "over_100") {
             setIsOver100Checked(e.target.checked);
         }
+
+        handleTabFilter();
     };
 
     //! Categories
@@ -230,6 +232,7 @@ const ProductShowcase = ({ data }) => {
             handleSortToggle();
         }
         setProducts([...sortedData]);
+        handleTabFilter();
     };
 
     let content = (
@@ -242,12 +245,22 @@ const ProductShowcase = ({ data }) => {
                 isFilter={isFilter}
                 isSortOpen={isSortOpen}
                 onSort={handleSort}
+                onCategoryChange={handleCategories}
             />
 
             <TabFilter
                 handleTabFilter={handleTabFilter}
                 isTabFilterOpen={isTabFilterOpen}
                 releasesNumber={releasesNumber}
+                isMenChecked={isMenChecked}
+                isWomenChecked={isWomenChecked}
+                isKidsChecked={isKidsChecked}
+                is0_25Checked={is0_25Checked}
+                is25_50Checked={is25_50Checked}
+                is50_100Checked={is50_100Checked}
+                isOver100Checked={isOver100Checked}
+                handleCheck={handleCheck}
+                onSort={handleSort}
             />
             <div className="relative flex pt-4">
                 <LeftSideNav
@@ -277,8 +290,7 @@ const ProductShowcase = ({ data }) => {
 
 export default ProductShowcase;
 
-//! without filters
-
+//! previous code with filter
 // import React, { useEffect, useState } from "react";
 // import TopNav from "./TopNav";
 // import LeftSideNav from "./LeftSideNav";
@@ -286,6 +298,7 @@ export default ProductShowcase;
 // import TabFilter from "./TabFilter";
 
 // const ProductShowcase = ({ data }) => {
+//     const [products, setProducts] = useState(data);
 //     const [isSortOpen, setIsSortOpen] = useState(false);
 //     const [isFilter, setIsFilter] = useState(true);
 //     const [isTabFilterOpen, setIsTabFilterOpen] = useState(false);
@@ -311,15 +324,36 @@ export default ProductShowcase;
 //     };
 
 //     useEffect(() => {
+//         if (isMenChecked || isWomenChecked || isKidsChecked) {
+//             handleGenders();
+//         } else if (
+//             is0_25Checked ||
+//             is25_50Checked ||
+//             is50_100Checked ||
+//             isOver100Checked
+//         ) {
+//             handlePrice();
+//         } else {
+//             setProducts(data);
+//         }
+//         // window
 //         window.addEventListener("resize", handleResize);
 //         window.addEventListener("scroll", controlScrollY);
 
 //         return () => {
 //             window.removeEventListener("resize", handleResize);
 //         };
-//     }, []);
+//     }, [
+//         isMenChecked,
+//         isWomenChecked,
+//         isKidsChecked,
+//         is0_25Checked,
+//         is25_50Checked,
+//         is50_100Checked,
+//         isOver100Checked,
+//     ]);
 
-//     const handleSort = () => {
+//     const handleSortToggle = () => {
 //         setIsSortOpen(!isSortOpen);
 //     };
 
@@ -331,26 +365,164 @@ export default ProductShowcase;
 //         setIsTabFilterOpen(!isTabFilterOpen);
 //     };
 
-//     // This function will work in Gender and ShopByPrice component
-//     const handleCheck = (e) => {
-//         // e.preventDefault();
-//         let name = e.target.name;
+//     //! Gender
+//     const handleGenders = () => {
+//         let filteredProducts = data;
 
-//         if (name === "men") {
+//         if (isMenChecked || isWomenChecked || isKidsChecked) {
+//             filteredProducts = filteredProducts.filter((product) => {
+//                 return (
+//                     (isMenChecked && product.gender === "men") ||
+//                     (isWomenChecked && product.gender === "women") ||
+//                     (isKidsChecked && product.gender === "kids")
+//                 );
+//             });
+//         }
+
+//         setProducts([...filteredProducts]);
+//     };
+
+//     //! price
+//     // const handlePrice = () => {
+//     //     let filteredProducts = data;
+
+//     //     if (
+//     //         is0_25Checked ||
+//     //         is25_50Checked ||
+//     //         is50_100Checked ||
+//     //         isOver100Checked
+//     //     ) {
+//     //         filteredProducts = filteredProducts.filter((product) => {
+//     //             return (
+//     //                 (is0_25Checked && product.price <= 25) ||
+//     //                 (is25_50Checked &&
+//     //                     product.price >= 25 &&
+//     //                     product.price <= 50) ||
+//     //                 (is50_100Checked &&
+//     //                     product.price >= 50 &&
+//     //                     product.price <= 100) ||
+//     //                 (isOver100Checked && product.price > 100)
+//     //             );
+//     //         });
+//     //     }
+
+//     //     setProducts([...filteredProducts]);
+//     // };
+
+//     const handlePrice = () => {
+//         let filteredProducts = data;
+
+//         if (isMenChecked || isWomenChecked || isKidsChecked) {
+//             filteredProducts.filter((product) => {
+//                 return (
+//                     ((isMenChecked && product.gender === "men") ||
+//                         (isWomenChecked && product.gender === "women") ||
+//                         (isKidsChecked && product.gender === "kids")) &&
+//                     ((is0_25Checked && product.price <= 25) ||
+//                         (is25_50Checked &&
+//                             product.price >= 25 &&
+//                             product.price <= 50) ||
+//                         (is50_100Checked &&
+//                             product.price >= 50 &&
+//                             product.price <= 100) ||
+//                         (isOver100Checked && product.price > 100))
+//                 );
+//             });
+
+//             setProducts([...filteredProducts]);
+//         } else if (
+//             is0_25Checked ||
+//             is25_50Checked ||
+//             is50_100Checked ||
+//             isOver100Checked
+//         ) {
+//             filteredProducts = filteredProducts.filter((product) => {
+//                 return (
+//                     (is0_25Checked && product.price <= 25) ||
+//                     (is25_50Checked &&
+//                         product.price >= 25 &&
+//                         product.price <= 50) ||
+//                     (is50_100Checked &&
+//                         product.price >= 50 &&
+//                         product.price <= 100) ||
+//                     (isOver100Checked && product.price > 100)
+//                 );
+//             });
+//         }
+
+//         setProducts([...filteredProducts]);
+//     };
+
+//     //! Checks
+
+//     const handleCheck = (e) => {
+//         // let name = e.target.name;
+//         let id = e.target.id;
+
+//         if (id === "men") {
 //             setIsMenChecked(e.target.checked);
-//         } else if (name === "women") {
+//         } else if (id === "women") {
 //             setIsWomenChecked(e.target.checked);
-//         } else if (name === "kids") {
+//         } else if (id === "kids") {
 //             setIsKidsChecked(e.target.checked);
-//         } else if (name === "0_25") {
+//         } else if (id === "0_25") {
 //             setIs0_25Checked(e.target.checked);
-//         } else if (name === "25_50") {
+//         } else if (id === "25_50") {
 //             setIs25_50Checked(e.target.checked);
-//         } else if (name === "50_100") {
+//         } else if (id === "50_100") {
 //             setIs50_100Checked(e.target.checked);
-//         } else if (name === "over_100") {
+//         } else if (id === "over_100") {
 //             setIsOver100Checked(e.target.checked);
 //         }
+//     };
+
+//     //! Categories
+//     const handleCategories = (e) => {
+//         const category = e.target.value;
+//         let categoryProducts;
+
+//         if (isMenChecked || isWomenChecked || isKidsChecked) {
+//             categoryProducts = data.filter((product) => {
+//                 return (
+//                     (isMenChecked &&
+//                         product.category === category &&
+//                         product.gender === "men") ||
+//                     (isWomenChecked &&
+//                         product.category === category &&
+//                         product.gender === "women") ||
+//                     (isKidsChecked &&
+//                         product.category === category &&
+//                         product.gender === "kids")
+//                 );
+//             });
+
+//             setProducts([...categoryProducts]);
+//         } else {
+//             categoryProducts = data.filter(
+//                 (product) => product.category === category
+//             );
+//             setProducts([...categoryProducts]);
+//         }
+//     };
+
+//     //! sorting
+//     const handleSort = (e) => {
+//         const sortTerm = e.target.value;
+//         let sortedData;
+
+//         if (sortTerm === "high_low") {
+//             sortedData = data.sort((a, b) => b.price - a.price);
+//             handleSortToggle();
+//         } else if (sortTerm === "low_high") {
+//             sortedData = data.sort((a, b) => a.price - b.price);
+//             handleSortToggle();
+//         } else if (sortTerm === "newest") {
+//             sortedData = data.sort(
+//                 (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+//             );
+//             handleSortToggle();
+//         }
+//         setProducts([...sortedData]);
 //     };
 
 //     let content = (
@@ -359,9 +531,10 @@ export default ProductShowcase;
 //                 scrollY={scrollY}
 //                 releasesNumber={releasesNumber}
 //                 handleFilter={handleFilter}
-//                 handleSort={handleSort}
+//                 handleSortToggle={handleSortToggle}
 //                 isFilter={isFilter}
 //                 isSortOpen={isSortOpen}
+//                 onSort={handleSort}
 //             />
 
 //             <TabFilter
@@ -381,9 +554,10 @@ export default ProductShowcase;
 //                     is50_100Checked={is50_100Checked}
 //                     isOver100Checked={isOver100Checked}
 //                     handleCheck={handleCheck}
+//                     onCategoryChange={handleCategories}
 //                 />
 //                 <ProductGrid
-//                     data={data}
+//                     data={products}
 //                     isFilter={isFilter}
 //                     windowWidth={windowWidth}
 //                 />
