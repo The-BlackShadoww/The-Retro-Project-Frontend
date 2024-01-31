@@ -6,10 +6,11 @@ import "../../assests/styles/global.css";
 import DesktopNav from "./DesktopNav/DesktopNav";
 import Search from "./DesktopNav/Search";
 import MobileNav from "./MobileNav/MobileNav";
-import { SearchContext } from "../../contexts";
+import { SearchContext, BagContext } from "../../contexts";
 
 const Navbar = () => {
     const { search, setSearch } = useContext(SearchContext);
+    const { bag } = useContext(BagContext);
     const [isSearching, setIsSearching] = useState(false);
     const [input, setInput] = useState("");
     //* mobile nav
@@ -90,7 +91,13 @@ const Navbar = () => {
                     <Link to="member/favorites" className="mx-4">
                         <HeartIcon />
                     </Link>
-                    <Link to={"/bag"}>
+                    <Link to={"/bag"} className="relative">
+                        {bag.length > 0 && (
+                            <span className="absolute -top-[5px] -right-[5px] bg-black text-white text-[10px] w-[18px] h-[18px] rounded-full flex justify-center items-center">
+                                {bag.length}
+                            </span>
+                        )}
+
                         <BagIcon />
                     </Link>
                 </div>

@@ -93,7 +93,7 @@ export function ProductCardSwiper({ arr, slidesNumber, path }) {
         <SwiperSlide
             key={item.id}
             className="w-full"
-            onClick={() => window.location.reload()}
+            // onClick={() => window.location.reload()}
         >
             <ProductSwiperSlides
                 item={item}

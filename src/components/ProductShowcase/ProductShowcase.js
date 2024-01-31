@@ -21,15 +21,6 @@ const ProductShowcase = ({ data }) => {
     const [isOver100Checked, setIsOver100Checked] = useState(false);
 
     const releasesNumber = data.length;
-
-    const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-    };
-
-    const controlScrollY = () => {
-        setScrollY(window.scrollY);
-    };
-
     useEffect(() => {
         if (isMenChecked || isWomenChecked || isKidsChecked) {
             handleGenders();
@@ -43,7 +34,12 @@ const ProductShowcase = ({ data }) => {
         } else {
             setProducts(data);
         }
+
         // window
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
         window.addEventListener("resize", handleResize);
         window.addEventListener("scroll", controlScrollY);
 
@@ -59,6 +55,10 @@ const ProductShowcase = ({ data }) => {
         is50_100Checked,
         isOver100Checked,
     ]);
+
+    const controlScrollY = () => {
+        setScrollY(window.scrollY);
+    };
 
     const handleSortToggle = () => {
         setIsSortOpen(!isSortOpen);

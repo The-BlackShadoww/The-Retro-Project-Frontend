@@ -2,17 +2,20 @@ import { BrowserRouter } from "react-router-dom";
 import Routers from "../routes/Routers";
 import { Provider } from "react-redux";
 import store from "../lib/Redux/Store";
-import { SearchContext } from "../contexts";
+import { SearchContext, BagContext } from "../contexts";
 import { useState } from "react";
 
 function App() {
     const [search, setSearch] = useState(false);
+    const [bag, setBag] = useState([]);
 
     return (
         <Provider store={store}>
             <BrowserRouter>
                 <SearchContext.Provider value={{ search, setSearch }}>
-                    <Routers />
+                    <BagContext.Provider value={{ bag, setBag }}>
+                        <Routers />
+                    </BagContext.Provider>
                 </SearchContext.Provider>
             </BrowserRouter>
         </Provider>

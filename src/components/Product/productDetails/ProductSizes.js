@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductSizes = () => {
+const ProductSizes = ({ size, handleSize }) => {
     return (
         <div>
             <fieldset>
@@ -15,6 +15,7 @@ const ProductSizes = () => {
                             name="size"
                             value="large"
                             className="appearance-none absolute peer shrink-0 h-[1px] w-[1px] overflow-hidden whitespace-nowrap"
+                            onChange={handleSize}
                         />
                         <label
                             for="#large"
@@ -31,6 +32,7 @@ const ProductSizes = () => {
                             name="size"
                             value="medium"
                             className="appearance-none absolute peer shrink-0 h-[1px] w-[1px] overflow-hidden whitespace-nowrap"
+                            onChange={handleSize}
                         />
                         <label
                             for="#medium"
@@ -47,6 +49,7 @@ const ProductSizes = () => {
                             name="size"
                             value="small"
                             className="appearance-none absolute peer shrink-0 h-[1px] w-[1px] overflow-hidden whitespace-nowrap"
+                            onChange={handleSize}
                         />
                         <label
                             for="#small"

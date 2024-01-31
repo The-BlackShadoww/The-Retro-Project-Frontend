@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import paypal from "../../assests/images/paypal.png";
-import YouMightAlsoLike from "../Product/productDetails/YouMightAlsoLike";
 import BagData from "./BagData";
 import BagItems from "./BagItems";
 import { LargeButtonBlack, LargeButtonWhite } from "../UI/Buttons/Button";
+import { BagContext } from "../../contexts";
 
 const BagDetails = () => {
+    const { bag, setBag } = useContext(BagContext);
     const [isCodeOpen, setIsCodeOpen] = useState(false);
     const [promoCode, setPromoCode] = useState("");
+    const [quantity, setQuantity] = useState(null);
+    console.log(quantity);
 
     const handelCode = () => {
         setIsCodeOpen(!isCodeOpen);
@@ -17,27 +20,35 @@ const BagDetails = () => {
         setPromoCode(e.target.value);
     };
 
-    const data = [
-        {
-            id: 0,
-            name: "product name",
-            img: "/Retro/new_img_main_guigju",
-            category: "category",
-            price: 0,
-        },
-        {
-            id: 1,
-            name: "product name",
-            img: "/Retro/new_img_main_guigju",
-            category: "category",
-            price: 0,
-        },
-    ];
+    const handleQuantity = (e, item) => {
+        setQuantity(parseInt(e.target.value));
+
+        const itemWithQuantity = {
+            ...item,
+            quantity: quantity,
+        };
+
+        const updatedBag = bag.map((product) =>
+            product.id === item.id ? itemWithQuantity : product
+        );
+
+        setBag(updatedBag);
+    };
+
+    const handleDelete = (productId) => {
+        const filteredProducts = bag.filter((item) => item.id !== productId);
+        setBag([...filteredProducts]);
+    };
 
     return (
         <main>
-            <div className="max-w-[1100px] mx-auto flex tablet:flex-row flex-col mt-12 tablet:px-0 px-4">
-                <BagItems data={data} />
+            <div className="max-w-[1100px] mx-auto flex tablet:flex-row flex-col my-12 tablet:px-0 px-4">
+                <BagItems
+                    data={bag}
+                    quantity={quantity}
+                    handleQuantity={handleQuantity}
+                    onDelete={handleDelete}
+                />
                 <aside className="flex flex-col flex-grow-[1] px-2">
                     <h1 className="text-3xl font-medium mb-[24px] tablet:mt-0 mt-7">
                         Summary
@@ -47,6 +58,7 @@ const BagDetails = () => {
                         getCode={getCode}
                         handelCode={handelCode}
                         isCodeOpen={isCodeOpen}
+                        bag={bag}
                     />
                     <hr />
                     <div className="mt-12">
@@ -66,7 +78,6 @@ const BagDetails = () => {
             <div className="fixed bottom-0 left-0 z-[100] w-full tablet:hidden block px-2">
                 <LargeButtonBlack path="/checkout">Checkout</LargeButtonBlack>
             </div>
-            <YouMightAlsoLike data={data} />
         </main>
     );
 };

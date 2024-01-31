@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Shipping from "./Shipping";
 import InYourBag from "./InYourBag";
+import { BagContext } from "../../contexts";
 
 const CheckoutDetails = () => {
+    const { bag } = useContext(BagContext);
+    console.log(bag);
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
