@@ -9,7 +9,7 @@ const DropdownLinks = () => {
         <div className="Poppins items-center">
             <ul className="w-[100% - 680px] max-w-[1255px] h-[60px] flex justify-center items-center mx-auto overflow-hidden Poppins">
                 {/* All Products */}
-                <div className="z-[1000]">
+                <div>
                     <Dropdown title={"Products"} path={"product"}>
                         <div className="flex flex-col text-left">
                             <Link to="" className="font-bold">

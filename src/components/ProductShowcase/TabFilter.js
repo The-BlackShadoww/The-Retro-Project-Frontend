@@ -38,7 +38,7 @@ const TabFilter = ({
                     isTabFilterOpen ? "w-full h-screen" : "w-0 h-0"
                 }    fixed ${
                     isTabFilterOpen ? "top-0" : "top-full"
-                } left-0 py-4 px-7 z-10 inset-0 overflow-auto bg-white`}
+                } left-0 py-4 px-7 z-[100] inset-0 overflow-auto bg-white`}
             >
                 <div className="flex justify-between mb-7">
                     <span className="">Filters</span>

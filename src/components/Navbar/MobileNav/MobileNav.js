@@ -32,18 +32,15 @@ const MobileNav = ({
                         >
                             <MagnifyingGlassIcon />
                         </span>
-                        <Link to={"/bag"} className="relative">
+                        <Link to={"/bag"} className="relative px-2">
                             {bag.length > 0 && (
-                                <span className="absolute -top-[5px] -right-[5px] bg-black text-white text-[10px] w-[18px] h-[18px] rounded-full flex justify-center items-center">
+                                <span className="absolute -top-[10%] -right-[0] bg-black text-white text-[10px] w-[18px] h-[18px] rounded-full flex justify-center items-center">
                                     {bag.length}
                                 </span>
                             )}
 
                             <BagIcon />
                         </Link>
-                        {/* <Link to="/bag" className="cursor-pointer px-2">
-                            <BagIcon />
-                        </Link> */}
                         <Link
                             to="/member/profile"
                             className="cursor-pointer px-2"

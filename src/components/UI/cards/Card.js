@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { DescriptiveText, SmallText } from "../Texts/Text";
 import { ButtonWhite } from "../Buttons/Button";
 import { CardImg, CardImgLg, ProductImg } from "../Media/AdvancedImg";
+import '../../../assests/styles/global.css'
 
 //!--------- Card 1 ---------
 export const SwiperSlides = ({ item, path }) => {
@@ -34,10 +35,10 @@ export const SwiperSlides = ({ item, path }) => {
 export const SwiperSlidesLayard = ({ item, windowWidth, path }) => {
     const cards = (
         <Link to={item.path ? item.path : path}>
-            <div className="relative w-[97%]">
+            <div className="relative w-[97%] Poppins">
                 <div className="absolute bottom-5 left-7 md:bottom-10 md:left-10 text-white">
-                    <p className="text-sm">{item.smTxt}</p>
-                    <p className="mb-5 mt-1">{item.bigTxt}</p>
+                    <p className="text-base font-semibold">{item.smTxt}</p>
+                    <p className="mb-5 mt-1 text-2xl">{item.bigTxt}</p>
                     <ButtonWhite path={item.path}>{item.button}</ButtonWhite>
                 </div>
                 <div className={``}>
