@@ -1,23 +1,25 @@
 import React, { useContext, useState } from "react";
-import { HeartIcon } from "../../../assests/icons/Icons";
+import { HeartIcon, HeartIconFill } from "../../../assests/icons/Icons";
 import { LargeButtonBlack, LargeButtonWhite } from "../../UI/Buttons/Button";
 import ProductSizes from "./ProductSizes";
 import Modal from "../../UI/Modal/Modal";
-import { BagContext } from "../../../contexts";
+import { BagContext, AllProducts } from "../../../contexts";
 import BagModal from "./BagModal";
 
 const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
-    const [size, setSize] = useState(null);
     const { bag, setBag } = useContext(BagContext);
-    const [bagModal, setBagModal] = useState([]);
-    const [showBagModal, setShowBagModal] = useState(false);
+    const { allProducts, setAllProducts } = useContext(AllProducts);
+    const [size, setSize] = useState(null);
+    const [modal, setModal] = useState([]);
+    const [showModal, setShowModal] = useState(false);
+    const [modalTitle, setModalTitle] = useState("");
 
-    const handleBagModalViewOpen = () => {
-        setShowBagModal(true);
+    const handleModalViewOpen = () => {
+        setShowModal(true);
     };
 
-    const handleBagModalViewClose = () => {
-        setShowBagModal(false);
+    const handleModalViewClose = () => {
+        setShowModal(false);
     };
 
     const handleBag = (item) => {
@@ -31,14 +33,15 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
 
         if (!found && size) {
             setBag([...bag, bagItems]);
-            setBagModal([...bagModal, bagItems]);
-            handleBagModalViewOpen();
+            setModal([...modal, bagItems]);
+            setModalTitle("Added to the bag");
+            handleModalViewOpen();
             setTimeout(() => {
-                handleBagModalViewClose();
+                handleModalViewClose();
             }, 2000);
         } else {
             if (found) {
-                alert("This product has already been added to bag");
+                alert("This product has already been added to the bag");
             } else if (!size) {
                 alert("select a size");
             }
@@ -50,14 +53,59 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
         setSize(size);
     };
 
+    const handelFavorite = (product) => {
+        const updatedProduct = allProducts.map((item) => {
+            if (item.id === product.id) {
+                return {
+                    ...item,
+                    favorite: !item.favorite,
+                };
+            } else {
+                return item;
+            }
+        });
+
+        setAllProducts([...updatedProduct]);
+    };
+
+    //! with modal
+    // const handelFavorite = (product) => {
+    //     const newIsFavorite = !isFavorite;
+
+    //     const updatedProduct = allProducts.map((item) => {
+    //         if (item.id === product.id) {
+    //             return {
+    //                 ...item,
+    //                 favorite: !item.favorite,
+    //             };
+    //         } else {
+    //             return item;
+    //         }
+    //     });
+
+    //     setAllProducts([...updatedProduct]);
+    //     setModal([...modal, product]);
+    //     setIsFavorite(newIsFavorite);
+    //     if (newIsFavorite) {
+    //         setModalTitle("Added to the Favorites");
+    //     } else {
+    //         setModalTitle("Removed from the Favorites");
+    //     }
+    //     handleModalViewOpen();
+    //     setTimeout(() => {
+    //         handleModalViewClose();
+    //     }, 2000);
+    // };
+
     let content;
 
     content = data.map((product) => (
         <>
             <BagModal
-                showBagModal={showBagModal}
-                bagModal={bagModal}
-                onModalClose={handleBagModalViewClose}
+                showModal={showModal}
+                bagModal={modal}
+                onModalClose={handleModalViewClose}
+                modalTitle={modalTitle}
             />
             <div>
                 <h4 className="text-2xl font-medium">{product.name}</h4>
@@ -73,10 +121,16 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
                         <LargeButtonBlack onClick={() => handleBag(product)}>
                             Add to Bag
                         </LargeButtonBlack>
-                        <LargeButtonWhite>
+                        <LargeButtonWhite
+                            onClick={() => handelFavorite(product)}
+                        >
                             <span className="flex">
                                 <span className="pr-3">Favorite</span>
-                                <HeartIcon />
+                                {product.favorite ? (
+                                    <HeartIconFill />
+                                ) : (
+                                    <HeartIcon />
+                                )}
                             </span>
                         </LargeButtonWhite>
                         <div className="pt-8">

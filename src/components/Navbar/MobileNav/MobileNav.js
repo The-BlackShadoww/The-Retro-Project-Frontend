@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import SideNav from "./SideNav";
 import Searchbar from "./Searchbar";
@@ -8,6 +8,7 @@ import {
     MagnifyingGlassIcon,
     HamburgerIcon,
 } from "../../../assests/icons/Icons";
+import { BagContext } from "../../../contexts";
 
 const MobileNav = ({
     isSideNavOpen,
@@ -18,6 +19,7 @@ const MobileNav = ({
     mobileSiderHandler,
     searchInputRef,
 }) => {
+    const { bag } = useContext(BagContext);
     return (
         <div className="tablet:hidden block">
             <div>
@@ -30,9 +32,18 @@ const MobileNav = ({
                         >
                             <MagnifyingGlassIcon />
                         </span>
-                        <Link to="/bag" className="cursor-pointer px-2">
+                        <Link to={"/bag"} className="relative">
+                            {bag.length > 0 && (
+                                <span className="absolute -top-[5px] -right-[5px] bg-black text-white text-[10px] w-[18px] h-[18px] rounded-full flex justify-center items-center">
+                                    {bag.length}
+                                </span>
+                            )}
+
                             <BagIcon />
                         </Link>
+                        {/* <Link to="/bag" className="cursor-pointer px-2">
+                            <BagIcon />
+                        </Link> */}
                         <Link
                             to="/member/profile"
                             className="cursor-pointer px-2"
@@ -49,7 +60,7 @@ const MobileNav = ({
                 </div>
             </div>
             <div
-                onClick={mobileSiderHandler}
+                // onClick={mobileSiderHandler}
                 className={`${
                     isSideNavOpen
                         ? "fixed top-0 left-0 w-screen h-screen z-50 bg-black/40 backdrop-blur-sm"

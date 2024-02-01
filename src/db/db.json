@@ -152,17 +152,20 @@
                 {
                     "id": 0,
                     "img": "/Retro/men-clothing-essentials_zhxmqe",
-                    "category": "Clothing"
+                    "category": "Clothing",
+                    "path": "/product/men/clothing"
                 },
                 {
                     "id": 1,
                     "img": "/Retro/men-shoe-essntials_prdtqc",
-                    "category": "Shoes"
+                    "category": "Shoes",
+                    "path": "/product/men/shoes"
                 },
                 {
                     "id": 2,
                     "img": "/Retro/men-accessories-essntials_u2rsq2",
-                    "category": "Accessories"
+                    "category": "Accessories",
+                    "path": "/product/men/accessories"
                 }
             ],
             "justIn": [
@@ -197,17 +200,20 @@
                 {
                     "id": 0,
                     "img": "/Retro/women-essentials-clothing_dxqt1o",
-                    "category": "Clothing"
+                    "category": "Clothing",
+                    "path": "/product/women/clothing"
                 },
                 {
                     "id": 1,
                     "img": "/Retro/women-essentials-shoes_egd743",
-                    "category": "Shoes"
+                    "category": "Shoes",
+                    "path": "/product/women/shoes"
                 },
                 {
                     "id": 2,
                     "img": "/Retro/women-essentials-accessories_dzryss",
-                    "category": "Accessories"
+                    "category": "Accessories",
+                    "path": "/product/women/accessories"
                 }
             ],
             "justIn": [
@@ -242,17 +248,20 @@
                 {
                     "id": 0,
                     "img": "/Retro/kids-essentials-clothing_hqu7ae",
-                    "category": "Clothing"
+                    "category": "Clothing",
+                    "path": "/product/kids/clothing"
                 },
                 {
                     "id": 1,
                     "img": "/Retro/kids-essentials-shoes_ywzcei",
-                    "category": "Shoes"
+                    "category": "Shoes",
+                    "path": "/product/kids/shoes"
                 },
                 {
                     "id": 2,
                     "img": "/Retro/kids-essentials-accessories_nlvtoy",
-                    "category": "Accessories"
+                    "category": "Accessories",
+                    "path": "/product/kids/accessories"
                 }
             ],
             "justIn": [
@@ -315,7 +324,8 @@
             "details": "Some details about the product",
             "for_age": "old",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-01-29T15:30:00.000+06:00"
+            "createdAt": "2022-01-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 1,
@@ -353,7 +363,8 @@
             "details": "Some details about the product",
             "for_age": "old",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-03-29T15:30:00.000+06:00"
+            "createdAt": "2022-03-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 2,
@@ -391,7 +402,8 @@
             "details": "Some details about the product",
             "for_age": "old",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-05-29T15:30:00.000+06:00"
+            "createdAt": "2022-05-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 3,
@@ -414,7 +426,8 @@
             "details": "Some details about the product",
             "for_age": "old",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-06-29T15:30:00.000+06:00"
+            "createdAt": "2022-06-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 4,
@@ -437,7 +450,8 @@
             "details": "Some details about the product",
             "for_age": "old",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-07-29T15:30:00.000+06:00"
+            "createdAt": "2022-07-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 5,
@@ -454,7 +468,8 @@
             "details": "Some details about the product",
             "for_age": "old",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-08-29T15:30:00.000+06:00"
+            "createdAt": "2022-08-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 6,
@@ -492,7 +507,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-09-29T15:30:00.000+06:00"
+            "createdAt": "2022-09-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 7,
@@ -515,7 +531,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-10-29T15:30:00.000+06:00"
+            "createdAt": "2022-10-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 8,
@@ -538,7 +555,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-11-29T15:30:00.000+06:00"
+            "createdAt": "2022-11-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 9,
@@ -561,7 +579,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2022-12-29T15:30:00.000+06:00"
+            "createdAt": "2022-12-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 10,
@@ -584,7 +603,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2023-01-29T15:30:00.000+06:00"
+            "createdAt": "2023-01-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 11,
@@ -607,7 +627,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2023-02-29T15:30:00.000+06:00"
+            "createdAt": "2023-02-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 12,
@@ -630,7 +651,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2023-03-29T15:30:00.000+06:00"
+            "createdAt": "2023-03-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 13,
@@ -653,7 +675,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2023-04-29T15:30:00.000+06:00"
+            "createdAt": "2023-04-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 14,
@@ -676,7 +699,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2023-05-29T15:30:00.000+06:00"
+            "createdAt": "2023-05-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 15,
@@ -699,7 +723,8 @@
             "details": "Some details about the product",
             "for_age": "adult",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2023-06-29T15:30:00.000+06:00"
+            "createdAt": "2023-06-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 16,
@@ -722,7 +747,8 @@
             "details": "Some details about the product",
             "for_age": "kid",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2023-07-29T15:30:00.000+06:00"
+            "createdAt": "2023-07-29T15:30:00.000+06:00",
+            "favorite": false
         },
         {
             "id": 17,
@@ -742,7 +768,8 @@
             "details": "Some details about the product",
             "for_age": "kid",
             "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati aut, eius suscipit, sint labore, beatae assumenda iste dolor aliquam accusantium ratione laudantium odit! Assumenda ipsam dolorem quibusdam quidem ullam aperiam sint aliquid quaerat, suscipit ea labore ipsum ratione! At porro id amet architecto repudiandae itaque totam quae ut saepe hic!",
-            "createdAt": "2023-08-29T15:30:00.000+06:00"
+            "createdAt": "2023-08-29T15:30:00.000+06:00",
+            "favorite": false
         }
     ],
 

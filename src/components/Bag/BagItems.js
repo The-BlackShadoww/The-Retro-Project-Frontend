@@ -1,9 +1,10 @@
 import React from "react";
 import { ProductImg } from "../UI/Media/AdvancedImg";
-import { HeartIcon, BinIcon } from "../../assests/icons/Icons";
+import { HeartIcon, BinIcon, HeartIconFill } from "../../assests/icons/Icons";
 
-const BagItems = ({ data, handleQuantity, onDelete }) => {
+const BagItems = ({ data, handleQuantity, onDelete, onFavorite }) => {
     let content;
+    
     if (data.length === 0) {
         content = (
             <p className="font-medium text-base">
@@ -20,7 +21,6 @@ const BagItems = ({ data, handleQuantity, onDelete }) => {
                     <div className="flex justify-between w-full font-medium text-base">
                         <p>{i.name}</p>
                         <p>${i.price * i.quantity}</p>
-                        {/* <p>${i.price}</p> */}
                     </div>
                     <p className="font-medium text-base opacity-60 pt-[2px]">
                         {i.gender} / {i.category}
@@ -50,17 +50,20 @@ const BagItems = ({ data, handleQuantity, onDelete }) => {
                                 className="font-medium text-base opacity-60 px-2"
                                 onChange={(e) => handleQuantity(e, i)}
                             >
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
+                                <option value={i.quantity} className="hidden">
+                                    {i.quantity}
+                                </option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
                             </select>
                         </div>
                     </div>
                     <div className="mt-10 flex">
-                        <button className=" ">
-                            <HeartIcon />
+                        <button onClick={() => onFavorite(i)} className="">
+                            {i.favorite ? <HeartIconFill /> : <HeartIcon />}
                         </button>
                         <button onClick={() => onDelete(i.id)} className="pl-4">
                             <BinIcon />

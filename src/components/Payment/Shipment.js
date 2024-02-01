@@ -1,22 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
+import { MemberProfileContext } from "../../contexts";
 
-const Shipment = ({ data }) => {
+const Shipment = () => {
+    const { profile } = useContext(MemberProfileContext);
+
     let content;
 
-    content = data.map((i) => (
-        <div key={i.id} className="py-2 w-full flex flex-col justify-end">
-            <span className="font-medium pb-1">To,</span>
-            <span className="font-medium pb-1">Name: {i.firstName}</span>
-            <span className="font-medium pb-1">Email: {i.email}</span>
-            <span className="font-medium pb-1">
-                Phone Number: {i.phoneNumber}
-            </span>
-            <span className="font-medium pb-1">Address: {i.address1}</span>
-            <span className="font-medium pb-1">City: {i.city}</span>
-            <span className="font-medium pb-1">Post Code: {i.postCode}</span>
-            <span className="font-medium pb-1">Country: {i.country}</span>
-        </div>
-    ));
+    if (profile) {
+        content = (
+            <div className="py-2 w-full flex flex-col justify-end">
+                <span className="font-medium pb-1">To,</span>
+                <span className="font-medium pb-1">
+                    Name: {profile.firstName}
+                </span>
+                <span className="font-medium pb-1">Email: {profile.email}</span>
+                <span className="font-medium pb-1">
+                    Phone Number: {profile.phoneNumber}
+                </span>
+                <span className="font-medium pb-1">
+                    Address: {profile.address1}
+                </span>
+                <span className="font-medium pb-1">City: {profile.city}</span>
+                <span className="font-medium pb-1">
+                    Post Code: {profile.postCode}
+                </span>
+                <span className="font-medium pb-1">
+                    Country: {profile.country}
+                </span>
+            </div>
+        );
+    }
 
     return (
         <div>

@@ -1,22 +1,36 @@
+import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import Routers from "../routes/Routers";
 import { Provider } from "react-redux";
 import store from "../lib/Redux/Store";
-import { SearchContext, BagContext } from "../contexts";
-import { useState } from "react";
+import {
+    AllProducts,
+    SearchContext,
+    BagContext,
+    MemberProfileContext,
+} from "../contexts";
+import Data from "../db/db.json";
 
 function App() {
+    const [allProducts, setAllProducts] = useState(Data.products);
     const [search, setSearch] = useState(false);
     const [bag, setBag] = useState([]);
+    const [profile, setProfile] = useState(null);
 
     return (
         <Provider store={store}>
             <BrowserRouter>
-                <SearchContext.Provider value={{ search, setSearch }}>
-                    <BagContext.Provider value={{ bag, setBag }}>
-                        <Routers />
-                    </BagContext.Provider>
-                </SearchContext.Provider>
+                <AllProducts.Provider value={{ allProducts, setAllProducts }}>
+                    <SearchContext.Provider value={{ search, setSearch }}>
+                        <BagContext.Provider value={{ bag, setBag }}>
+                            <MemberProfileContext.Provider
+                                value={{ profile, setProfile }}
+                            >
+                                <Routers />
+                            </MemberProfileContext.Provider>
+                        </BagContext.Provider>
+                    </SearchContext.Provider>
+                </AllProducts.Provider>
             </BrowserRouter>
         </Provider>
     );

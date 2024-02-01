@@ -3,8 +3,10 @@ import TopNav from "./TopNav";
 import LeftSideNav from "./LeftSideNav";
 import ProductGrid from "./ProductGrid";
 import TabFilter from "./TabFilter";
+import { useParams } from "react-router-dom";
 
 const ProductShowcase = ({ data }) => {
+    const { gender, category } = useParams();
     const [products, setProducts] = useState(data);
     const [isSortOpen, setIsSortOpen] = useState(false);
     const [isFilter, setIsFilter] = useState(true);
@@ -19,8 +21,8 @@ const ProductShowcase = ({ data }) => {
     const [is25_50Checked, setIs25_50Checked] = useState(false);
     const [is50_100Checked, setIs50_100Checked] = useState(false);
     const [isOver100Checked, setIsOver100Checked] = useState(false);
-
     const releasesNumber = data.length;
+
     useEffect(() => {
         if (isMenChecked || isWomenChecked || isKidsChecked) {
             handleGenders();
@@ -31,6 +33,22 @@ const ProductShowcase = ({ data }) => {
             isOver100Checked
         ) {
             handlePrice();
+        } else if (gender && category) {
+            const fetchProducts = data.filter(
+                (product) =>
+                    product.gender === gender && product.category === category
+            );
+            setProducts([...fetchProducts]);
+        } else if (gender) {
+            const fetchProducts = data.filter(
+                (product) => product.gender === gender
+            );
+            setProducts([...fetchProducts]);
+        } else if (category) {
+            const fetchProducts = data.filter(
+                (product) => product.gender === category
+            );
+            setProducts([...fetchProducts]);
         } else {
             setProducts(data);
         }
@@ -54,6 +72,8 @@ const ProductShowcase = ({ data }) => {
         is25_50Checked,
         is50_100Checked,
         isOver100Checked,
+        category,
+        gender,
     ]);
 
     const controlScrollY = () => {
@@ -161,7 +181,6 @@ const ProductShowcase = ({ data }) => {
     };
 
     //! Checks
-
     const handleCheck = (e) => {
         // let name = e.target.name;
         let id = e.target.id;

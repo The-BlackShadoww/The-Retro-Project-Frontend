@@ -3,11 +3,18 @@ import { ProductImg } from "../../UI/Media/AdvancedImg";
 import { CloseIcon } from "../../../assests/icons/Icons";
 import { LargeButtonBlack } from "../../UI/Buttons/Button";
 
-const BagModal = ({ showBagModal, bagModal, onModalClose }) => {
+const BagModal = ({
+    showModal,
+    bagModal,
+    onModalClose,
+    isFavorite,
+    addToBag,
+    modalTitle,
+}) => {
     return (
         <div
             className={`${
-                showBagModal
+                showModal
                     ? "block fixed top-0 left-0 w-full h-full bg-black/50 backdrop-blur-sm z-[100]"
                     : "hidden relative z-0"
             }`}
@@ -24,8 +31,9 @@ const BagModal = ({ showBagModal, bagModal, onModalClose }) => {
                                 aria-label="check-mark"
                                 className="flex"
                             >
-                                ✅
-                                <h4 className="font-semibold">Added to Bag</h4>
+                                <h4 className={`font-semibold`}>
+                                    ✅ {modalTitle}
+                                </h4>
                             </span>
                             <span
                                 onClick={onModalClose}
@@ -42,9 +50,15 @@ const BagModal = ({ showBagModal, bagModal, onModalClose }) => {
                             <br />
                             <span className="font-semibold">${item.price}</span>
                         </div>
-                        <LargeButtonBlack path={"/bag"}>
-                            View Bag
-                        </LargeButtonBlack>
+                        {isFavorite ? (
+                            <LargeButtonBlack path={"/member/favorites"}>
+                                View Favorite
+                            </LargeButtonBlack>
+                        ) : (
+                            <LargeButtonBlack path={"/bag"}>
+                                View Bag
+                            </LargeButtonBlack>
+                        )}
                     </div>
                 </div>
             ))}

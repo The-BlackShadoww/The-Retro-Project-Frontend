@@ -52,7 +52,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className="w-full h-[60px] relative z-[2] Poppins">
+        <header className="w-full h-[60px] relative z-[100] Poppins">
             <div className="max-w-[1920px] max-h-[60px] mx-auto tablet:pr-[38px] tablet:pl-[36px] pr-3 pl-4 opacity-100 flex items-center">
                 <div
                     className={`z-[100] visible  ${

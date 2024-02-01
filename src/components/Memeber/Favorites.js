@@ -1,44 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GeneralProductImg } from "../UI/Media/AdvancedImg";
+import { AllProducts } from "../../contexts";
 
 const Favorites = () => {
-    const data = [
-        {
-            id: 0,
-            name: "Product name",
-            category: "category",
-            price: "0",
-            img: "/Retro/new_img_main_guigju",
-        },
-        {
-            id: 1,
-            name: "Product name",
-            category: "category",
-            price: "0",
-            img: "/Retro/new_img_main_guigju",
-        },
-        {
-            id: 2,
-            name: "Product name",
-            category: "category",
-            price: "0",
-            img: "/Retro/new_img_main_guigju",
-        },
-    ];
+    const { allProducts } = useContext(AllProducts);
+
+    const findFavorites = allProducts.filter((item) => item.favorite === true);
 
     let content;
 
-    if (data.length === 0) {
-        content = <p>Your favorites items will be add here</p>;
-    } else {
-        content = data.map((i) => (
+    if (findFavorites.length > 0) {
+        content = findFavorites.map((i) => (
             <div key={i.id}>
-                <GeneralProductImg img={i.img} />
+                <GeneralProductImg img={i.main_img} />
                 <div className="pt-4 flex justify-between items-center">
                     <div>
                         <p className="font-medium">{i.name}</p>
                         <p className="font-medium text-[#757575]">
-                            {i.category}
+                            {i.gender} / {i.category}
                         </p>
                     </div>
                     <div>
@@ -47,6 +26,8 @@ const Favorites = () => {
                 </div>
             </div>
         ));
+    } else {
+        content = <p>Your favorites items will be add here</p>;
     }
 
     return (

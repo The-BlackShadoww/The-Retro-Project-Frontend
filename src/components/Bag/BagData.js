@@ -1,18 +1,8 @@
 import React from "react";
 import { RxCaretDown, RxCaretUp } from "react-icons/rx";
+import { GetBagTotal } from "../../utils/CalculateBag";
 
 const BagData = ({ promoCode, getCode, handelCode, isCodeOpen, bag }) => {
-    const getTotal = () => {
-        if (bag) {
-            const total = bag.reduce((accumulator, currentItem) => {
-                return accumulator + currentItem.price * currentItem.quantity;
-            }, 0);
-
-            return total;
-        }
-        return 0;
-    };
-
     return (
         <div>
             <div className="pb-5">
@@ -49,7 +39,9 @@ const BagData = ({ promoCode, getCode, handelCode, isCodeOpen, bag }) => {
                                 ?
                             </span>
                         </span>
-                        <span>${getTotal()}</span>
+                        <span>
+                            $<GetBagTotal />
+                        </span>
                     </div>
                     <div className="flex justify-between font-medium pt-4">
                         <span className="flex items-center">
@@ -73,7 +65,9 @@ const BagData = ({ promoCode, getCode, handelCode, isCodeOpen, bag }) => {
                 <span className="flex items-center">
                     <p>Total</p>
                 </span>
-                <span>${getTotal()}</span>
+                <span>
+                    $<GetBagTotal />
+                </span>
             </div>
         </div>
     );

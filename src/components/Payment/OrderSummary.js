@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ProductImg } from "../UI/Media/AdvancedImg";
+import { BagContext } from "../../contexts";
 
-const OrderSummary = ({ data }) => {
+const OrderSummary = () => {
+    const { bag } = useContext(BagContext);
+
     let content;
 
-    content = data.map((i) => (
+    content = bag.map((i) => (
         <div key={i.id}>
             <div className="w-full flex gap-5">
                 <div className="mobile_sm:w-52 mobile_sm:h-44 w-28 h-20">
-                    <ProductImg img={"/Retro/new_img_main_guigju"} />
+                    <ProductImg img={i.main_img} />
                 </div>{" "}
                 <div className="w-full flex flex-col">
                     <span className="tablet:text-2xl text-lg font-bold">
                         {i.name}
                     </span>
                     <span className="tablet:pt-1 text-[#757575] tablet:font-semibold">
-                        {i.category}
+                        {i.gender} / {i.category}
                     </span>
                     <span className="tablet:pt-1 text-[#757575] tablet:font-semibold">
                         Quantity<span className="pl-2">{i.quantity}</span>
@@ -23,7 +26,7 @@ const OrderSummary = ({ data }) => {
                     <div className="flex justify-between tablet:pt-12 pt-5 text-lg font-semibold">
                         <span>Total</span>
                         <span>
-                            $<span>{i.price}</span>
+                            $<span>{i.price * i.quantity}</span>
                         </span>
                     </div>
                 </div>

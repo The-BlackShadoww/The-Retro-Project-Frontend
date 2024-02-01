@@ -36,7 +36,11 @@ const Routers = () => {
                     <Route path="men" element={<Men />} />
                     <Route path="women" element={<Women />} />
                     <Route path="kids" element={<Kids />} />
-                    <Route path="product" element={<Product />} />
+                    {/* <Route path="product" element={<Product />} /> */}
+                    <Route
+                        path="/product/:gender?/:category?"
+                        element={<Product />}
+                    />
                     <Route
                         path="singleProduct/:id"
                         element={<SingleProduct />}

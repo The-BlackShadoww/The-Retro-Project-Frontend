@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const SideNav = ({ isSideNavOpen, siderHandler }) => {
     const show = (
         <div
-            className={`bg-white p-5 w-72 h-screen text-1xl fixed top-0 right-0 transition-all z-[100] ${
+            className={`bg-white p-5 w-72 h-screen text-1xl fixed top-0 right-0 transition-all ${
                 isSideNavOpen ? null : "translate-x-full"
             }`}
         >
@@ -24,8 +24,15 @@ const SideNav = ({ isSideNavOpen, siderHandler }) => {
             <div className="mt-4">
                 <div className="flex flex-col">
                     <Link
+                        to={"product"}
+                        className="flex justify-between items-center mt-3"
+                        onClick={siderHandler}
+                    >
+                        Products <CaretRightIcon />
+                    </Link>
+                    <Link
                         to={"men"}
-                        className="flex justify-between items-center"
+                        className="flex justify-between items-center mt-3"
                         onClick={siderHandler}
                     >
                         Men <CaretRightIcon />
@@ -43,13 +50,6 @@ const SideNav = ({ isSideNavOpen, siderHandler }) => {
                         onClick={siderHandler}
                     >
                         Kids <CaretRightIcon />
-                    </Link>
-                    <Link
-                        to={"product"}
-                        className="flex justify-between items-center mt-3"
-                        onClick={siderHandler}
-                    >
-                        New & Featured <CaretRightIcon />
                     </Link>
                 </div>
 

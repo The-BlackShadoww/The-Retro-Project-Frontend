@@ -14,7 +14,7 @@ const ProductPresentation = ({ data, color }) => {
             {/* Nav */}
             <CategoryNav i={i} />
             {/* Banner */}
-            <HeroContent data={data} path={"/product"} />
+            <HeroContent data={data} path={`/product/${i.gender}`} />
             {/* Essentials */}
             <Section title="Shop the Essentials">
                 <Essentials data={i.essentials} />

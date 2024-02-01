@@ -3,14 +3,13 @@ import paypal from "../../assests/images/paypal.png";
 import BagData from "./BagData";
 import BagItems from "./BagItems";
 import { LargeButtonBlack, LargeButtonWhite } from "../UI/Buttons/Button";
-import { BagContext } from "../../contexts";
+import { AllProducts, BagContext } from "../../contexts";
 
 const BagDetails = () => {
+    const { allProducts, setAllProducts } = useContext(AllProducts);
     const { bag, setBag } = useContext(BagContext);
     const [isCodeOpen, setIsCodeOpen] = useState(false);
     const [promoCode, setPromoCode] = useState("");
-    const [quantity, setQuantity] = useState(null);
-    console.log(quantity);
 
     const handelCode = () => {
         setIsCodeOpen(!isCodeOpen);
@@ -21,18 +20,19 @@ const BagDetails = () => {
     };
 
     const handleQuantity = (e, item) => {
-        setQuantity(parseInt(e.target.value));
+        const newQuantity = parseInt(e.target.value);
 
         const itemWithQuantity = {
             ...item,
-            quantity: quantity,
+            quantity: newQuantity,
         };
 
         const updatedBag = bag.map((product) =>
             product.id === item.id ? itemWithQuantity : product
         );
 
-        setBag(updatedBag);
+        // setBag(updatedBag);
+        setBag([...updatedBag]);
     };
 
     const handleDelete = (productId) => {
@@ -40,14 +40,42 @@ const BagDetails = () => {
         setBag([...filteredProducts]);
     };
 
+    const handelFavorite = (product) => {
+        const updatedProduct = allProducts.map((item) => {
+            if (item.id === product.id) {
+                return {
+                    ...item,
+                    favorite: !item.favorite,
+                };
+            } else {
+                return item;
+            }
+        });
+
+        // updating the bag
+        const updatedBag = bag.map((item) => {
+            if (item.id === product.id) {
+                return {
+                    ...item,
+                    favorite: !item.favorite,
+                };
+            } else {
+                return item;
+            }
+        });
+
+        setAllProducts([...updatedProduct]);
+        setBag([...updatedBag]);
+    };
+
     return (
         <main>
             <div className="max-w-[1100px] mx-auto flex tablet:flex-row flex-col my-12 tablet:px-0 px-4">
                 <BagItems
                     data={bag}
-                    quantity={quantity}
                     handleQuantity={handleQuantity}
                     onDelete={handleDelete}
+                    onFavorite={handelFavorite}
                 />
                 <aside className="flex flex-col flex-grow-[1] px-2">
                     <h1 className="text-3xl font-medium mb-[24px] tablet:mt-0 mt-7">
@@ -75,7 +103,7 @@ const BagDetails = () => {
                     </div>
                 </aside>
             </div>
-            <div className="fixed bottom-0 left-0 z-[100] w-full tablet:hidden block px-2">
+            <div className="fixed bottom-0 left-0 z-[50] w-full tablet:hidden block px-2">
                 <LargeButtonBlack path="/checkout">Checkout</LargeButtonBlack>
             </div>
         </main>

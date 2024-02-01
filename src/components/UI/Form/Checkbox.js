@@ -23,7 +23,7 @@ export const Checkbox = ({
                 className="relative peer shrink-0 w-[18px] h-[18px]  appearance-none border border-gray-400 rounded-sm bg-white  checked:bg-black checked:border-0 outline-none cursor-pointer"
             />
             <label
-                for={id}
+                htmlFor={id}
                 className={`font-medium`}
                 style={{ paddingLeft: pl }}
             >
