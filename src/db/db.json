@@ -303,22 +303,7 @@
                 "/Retro/new_img_2_ihhj8j",
                 "/Retro/new_img_5_dnluvy"
             ],
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/new_img_main_guigju",
-                    "img_2": "/Retro/new_img_4_viquzm",
-                    "img_3": "/Retro/new_img_3_s4mgzb",
-                    "img_4": "/Retro/new_img_2_ihhj8j",
-                    "img_5": "/Retro/new_img_5_dnluvy"
-                },
-                "brown": {
-                    "main_img": "/Retro/men_new_s_main_f2fq1c",
-                    "img_2": "/Retro/men_new_s_5_himjw6",
-                    "img_3": "/Retro/men_new_s_4_hwrzm1",
-                    "img_4": "/Retro/men_new_s_3_ywvgxk",
-                    "img_5": "/Retro/men_new_s_2_stnfiu"
-                }
-            },
+            "colors": {},
             "kids": "non",
             "arrival": "new",
             "details": "Some details about the product",
@@ -342,22 +327,7 @@
                 "/Retro/men_s_2_img_4_xbv4gv",
                 "/Retro/men_s_2_img_5_iwtecd"
             ],
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/new_img_main_guigju",
-                    "img_2": "/Retro/new_img_4_viquzm",
-                    "img_3": "/Retro/new_img_3_s4mgzb",
-                    "img_4": "/Retro/new_img_2_ihhj8j",
-                    "img_5": "/Retro/new_img_5_dnluvy"
-                },
-                "brown": {
-                    "main_img": "/Retro/men_new_s_main_f2fq1c",
-                    "img_2": "/Retro/men_new_s_5_himjw6",
-                    "img_3": "/Retro/men_new_s_4_hwrzm1",
-                    "img_4": "/Retro/men_new_s_3_ywvgxk",
-                    "img_5": "/Retro/men_new_s_2_stnfiu"
-                }
-            },
+            "colors": {},
             "kids": "non",
             "arrival": "new",
             "details": "Some details about the product",
@@ -381,22 +351,7 @@
                 "/Retro/men_c_2_img_4_ypnla8",
                 "/Retro/men_c_2_img_5_q85nxa"
             ],
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/new_img_main_guigju",
-                    "img_2": "/Retro/new_img_4_viquzm",
-                    "img_3": "/Retro/new_img_3_s4mgzb",
-                    "img_4": "/Retro/new_img_2_ihhj8j",
-                    "img_5": "/Retro/new_img_5_dnluvy"
-                },
-                "brown": {
-                    "main_img": "/Retro/men_new_s_main_f2fq1c",
-                    "img_2": "/Retro/men_new_s_5_himjw6",
-                    "img_3": "/Retro/men_new_s_4_hwrzm1",
-                    "img_4": "/Retro/men_new_s_3_ywvgxk",
-                    "img_5": "/Retro/men_new_s_2_stnfiu"
-                }
-            },
+            "colors": {},
             "kids": "non",
             "arrival": "new",
             "details": "Some details about the product",
@@ -486,22 +441,7 @@
                 "/Retro/women_c_new_2_jhjhpx",
                 "/Retro/women_c_new_4_jm352m"
             ],
-            "colors": {
-                "black": {
-                    "main_img": "/Retro/women_c_new_main_jnezpp",
-                    "img_2": "/Retro/women_c_new_3_crqeoo",
-                    "img_3": "/Retro/women_c_new_2_jhjhpx",
-                    "img_4": "/Retro/women_c_new_5_fcqwph",
-                    "img_5": "/Retro/women_c_new_4_jm352m"
-                },
-                "brown": {
-                    "main_img": "/Retro/men_new_s_main_f2fq1c",
-                    "img_2": "/Retro/men_new_s_5_himjw6",
-                    "img_3": "/Retro/men_new_s_4_hwrzm1",
-                    "img_4": "/Retro/men_new_s_3_ywvgxk",
-                    "img_5": "/Retro/men_new_s_2_stnfiu"
-                }
-            },
+            "colors": {},
             "kids": "non",
             "arrival": "new",
             "details": "Some details about the product",

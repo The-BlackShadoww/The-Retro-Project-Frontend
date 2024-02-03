@@ -35,12 +35,21 @@ export const ButtonOutlined = ({ children, path }) => {
     );
 };
 
-export const LargeButtonBlack = ({ children, path, onClick }) => {
+export const LargeButtonBlack = ({
+    children,
+    path,
+    onClick,
+    state,
+    disable,
+}) => {
     return (
-        <Link to={path}>
+        <Link to={path} state={`${state && state}`}>
             <button
                 onClick={onClick}
-                className="w-full bg-black text-white text-lg font-semibold p-4 my-3 rounded-full hover:opacity-50"
+                disabled={disable}
+                className={`w-full bg-black text-white text-lg font-semibold p-4 my-3 rounded-full hover:opacity-50 ${
+                    disable && "opacity-50"
+                }`}
             >
                 {children}
             </button>
@@ -48,12 +57,15 @@ export const LargeButtonBlack = ({ children, path, onClick }) => {
     );
 };
 
-export const LargeButtonWhite = ({ children, path, onClick }) => {
+export const LargeButtonWhite = ({ children, path, onClick, disable }) => {
     return (
         <Link to={path}>
             <button
                 onClick={onClick}
-                className="w-full bg-white text-black text-lg font-semibold p-4 border border-gray-200 rounded-full flex justify-center items-center hover:border-black"
+                disabled={disable}
+                className={`w-full bg-white text-black text-lg font-semibold p-4 border border-gray-200 rounded-full flex justify-center items-center  ${
+                    disable ? "opacity-50" : "hover:border-black"
+                }`}
             >
                 {children}
             </button>

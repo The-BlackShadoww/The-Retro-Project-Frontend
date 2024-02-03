@@ -28,7 +28,7 @@ import Category from "../components/Admin/Category/Category";
 
 const Routers = () => {
     return (
-        <div>
+        <>
             <Routes>
                 {/*----- Parent route -----*/}
                 <Route path="/" element={<Layout />}>
@@ -80,7 +80,7 @@ const Routers = () => {
                     <Route path="category" element={<Category />} />
                 </Route>
             </Routes>
-        </div>
+        </>
     );
 };
 

@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import ProductPresentation from "../../components/ProductPresentation/ProductPresentation";
 import Data from "../../db/db.json";
+import { useLocation } from "react-router-dom";
+import { LocationContext } from "../../contexts";
 
 const Women = () => {
+    const { setLocation } = useContext(LocationContext);
+    const getLocation = useLocation();
+
+    useEffect(() => {
+        setLocation(getLocation.pathname);
+    });
+
     const data = Data.allGenderProducts;
 
     const dataForWomen = data.filter((item) => item.gender === "women");
@@ -15,40 +24,3 @@ const Women = () => {
 };
 
 export default Women;
-
-//! previous code with redux
-// import React from "react";
-// import { useSelector } from "react-redux";
-// import {
-//     useGetAllGenderDataQuery,
-//     selectAllGenderProduct,
-// } from "../../services/ReduxRtkQuery/allGenderSlices/allGenderSlice";
-// import ProductPresentation from "../../components/ProductPresentation/ProductPresentation";
-
-// const Women = () => {
-//     const {
-//         // data: Data,
-//         isLoading,
-//         isError,
-//         isSuccess,
-//         error,
-//     } = useGetAllGenderDataQuery();
-
-//     const data = useSelector(selectAllGenderProduct);
-
-//     const dataForWomen = data.filter((item) => item.gender === "women");
-
-//     let content;
-
-//     if (isLoading) {
-//         content = <p>Loading...</p>;
-//     } else if (isSuccess) {
-//         content = <ProductPresentation data={dataForWomen} />;
-//     } else if (isError) {
-//         content = { error };
-//     }
-
-//     return content;
-// };
-
-// export default Women;

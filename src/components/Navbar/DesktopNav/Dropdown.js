@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../Nav.css";
 import "../../../assests/styles/global.css";
 
-const Dropdown = ({ title, path, children }) => {
+const Dropdown = ({ title, path, children, state }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const onMouseEnter = () => {
@@ -34,7 +34,7 @@ const Dropdown = ({ title, path, children }) => {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
         >
-            <Link to={path} className="py-6 px-4 font-semibold">
+            <Link to={path} state={state} className="py-6 px-4 font-semibold">
                 {title}
             </Link>
             {/* Dropdown container */}

@@ -1,18 +1,37 @@
-import React, { useContext, useState } from "react";
+import React, { Fragment, useContext, useEffect, useState } from "react";
 import { HeartIcon, HeartIconFill } from "../../../assests/icons/Icons";
-import { LargeButtonBlack, LargeButtonWhite } from "../../UI/Buttons/Button";
+import {
+    Button,
+    LargeButtonBlack,
+    LargeButtonWhite,
+} from "../../UI/Buttons/Button";
 import ProductSizes from "./ProductSizes";
 import Modal from "../../UI/Modal/Modal";
-import { BagContext, AllProducts } from "../../../contexts";
+import { BagContext, AllProducts, AuthToken } from "../../../contexts";
 import BagModal from "./BagModal";
+import Alert from "../../UI/Alert/Alert";
 
 const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
     const { bag, setBag } = useContext(BagContext);
+    const { token } = useContext(AuthToken);
     const { allProducts, setAllProducts } = useContext(AllProducts);
     const [size, setSize] = useState(null);
     const [modal, setModal] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [modalTitle, setModalTitle] = useState("");
+    const [isTokenMissing, setIsTokenMissing] = useState(false);
+
+    useEffect(() => {
+        if (isTokenMissing) {
+            setTimeout(() => {
+                handleTokenChange();
+            }, 2500);
+        }
+    }, [isTokenMissing]);
+
+    const handleTokenChange = () => {
+        setIsTokenMissing(!isTokenMissing);
+    };
 
     const handleModalViewOpen = () => {
         setShowModal(true);
@@ -31,20 +50,24 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
 
         const found = bag.find((product) => product.id === item.id);
 
-        if (!found && size) {
-            setBag([...bag, bagItems]);
-            setModal([...modal, bagItems]);
-            setModalTitle("Added to the bag");
-            handleModalViewOpen();
-            setTimeout(() => {
-                handleModalViewClose();
-            }, 2000);
-        } else {
-            if (found) {
-                alert("This product has already been added to the bag");
-            } else if (!size) {
-                alert("select a size");
+        if (token) {
+            if (!found && size) {
+                setBag([...bag, bagItems]);
+                setModal([...modal, bagItems]);
+                setModalTitle("Added to the bag");
+                handleModalViewOpen();
+                setTimeout(() => {
+                    handleModalViewClose();
+                }, 2000);
+            } else {
+                if (found) {
+                    alert("This product has already been added to the bag");
+                } else if (!size) {
+                    alert("select a size");
+                }
             }
+        } else {
+            handleTokenChange();
         }
     };
 
@@ -54,18 +77,22 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
     };
 
     const handelFavorite = (product) => {
-        const updatedProduct = allProducts.map((item) => {
-            if (item.id === product.id) {
-                return {
-                    ...item,
-                    favorite: !item.favorite,
-                };
-            } else {
-                return item;
-            }
-        });
+        if (token) {
+            const updatedProduct = allProducts.map((item) => {
+                if (item.id === product.id) {
+                    return {
+                        ...item,
+                        favorite: !item.favorite,
+                    };
+                } else {
+                    return item;
+                }
+            });
 
-        setAllProducts([...updatedProduct]);
+            setAllProducts([...updatedProduct]);
+        } else {
+            handleTokenChange();
+        }
     };
 
     //! with modal
@@ -100,7 +127,16 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
     let content;
 
     content = data.map((product) => (
-        <>
+        <Fragment key={product.id}>
+            {isTokenMissing && (
+                <Alert
+                    onAlertChange={handleTokenChange}
+                    message={"It seems you are not currently signed in"}
+                >
+                    <Button path={"/auth"}>Sign In</Button>
+                </Alert>
+            )}
+
             <BagModal
                 showModal={showModal}
                 bagModal={modal}
@@ -156,7 +192,7 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
                     {product.description}
                 </Modal>
             </div>
-        </>
+        </Fragment>
     ));
 
     return (
