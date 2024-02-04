@@ -8,7 +8,6 @@ const JustIn = ({ data, color }) => {
         <Link key={i.id} to="/product">
             <div className="w-full overflow-hidden relative">
                 <Poster img={i.img} />
-                {/* <div className="w-full h-full absolute top-0 left-0 bg-black opacity-40"></div> */}
                 <div className="absolute left-6 bottom-6 md:left-12 md:bottom-12">
                     <span
                         className={`mb-1 ${

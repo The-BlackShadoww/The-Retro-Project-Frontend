@@ -8,13 +8,6 @@ const ShopByPrice = ({
     isOver100Checked,
     handleCheck,
 }) => {
-    const data = {
-        is0_25Checked: is0_25Checked,
-        is25_50Checked: is25_50Checked,
-        is50_100Checked: is50_100Checked,
-        isOver100Checked: isOver100Checked,
-    };
-
     return (
         <div className={`pt-3 pb-6 font-medium`}>
             <h4>Shop By Price</h4>

@@ -145,6 +145,7 @@ export const HeartIcon = () => {
         </svg>
     );
 };
+
 export const HeartIconFill = () => {
     return (
         <svg
@@ -211,8 +212,8 @@ export const PersonIcon = () => {
             focusable="false"
             viewBox="0 0 24 24"
             role="img"
-            width="24px"
-            height="24px"
+            width="22px"
+            height="22px"
             fill="none"
             data-var="glyph"
             // style="display: inline-block;"

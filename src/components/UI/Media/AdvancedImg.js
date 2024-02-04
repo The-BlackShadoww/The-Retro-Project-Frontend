@@ -2,7 +2,8 @@ import React from "react";
 import { cld } from "../../../config/Cloudinary/Cloudinary";
 import { AdvancedImage } from "@cloudinary/react";
 import { Resize } from "@cloudinary/url-gen/actions";
-import "./style.css";
+// import "./style.css";
+import '../../../assests/styles/global.css'
 
 //!--------- General Image ---------
 export const General = ({ img }) => {
@@ -28,18 +29,6 @@ export const Poster = ({ img }) => {
 };
 
 //!--------- Banner Image ---------
-// export const Banner = ({ img }) => {
-//     return (
-//         <AdvancedImage
-//             cldImg={cld
-//                 .image(img)
-//                 .resize(Resize.crop().width(1980).height(1600).gravity("auto"))
-//                 .quality(100)
-//                 .format("auto")}
-//         />
-//     );
-// };
-
 export const Banner = ({ img }) => {
     return (
         <AdvancedImage
@@ -95,20 +84,7 @@ export const ProductImg = ({ img }) => {
     );
 };
 
-// export const ProductImg = ({ img }) => {
-//     return (
-//         <AdvancedImage
-//             cldImg={cld
-//                 .image(img)
-//                 .resize(Resize.fill().width(1600).height(1950)) // Set maximum width and height
-//                 .resize(Resize.crop().width(1100).height(1700).gravity("center"))
-//                 .quality("auto")
-//                 .format("auto")}
-//             // className="full-width-height-image"
-//         />
-//     );
-// };
-
+//! General product image
 export const GeneralProductImg = ({ img }) => {
     return (
         <AdvancedImage
@@ -122,5 +98,3 @@ export const GeneralProductImg = ({ img }) => {
         />
     );
 };
-
-//! Profile picture

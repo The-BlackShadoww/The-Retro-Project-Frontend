@@ -21,10 +21,6 @@ import PaymentMethod from "../components/Memeber/settings/PaymentMethod";
 import Visibility from "../components/Memeber/settings/Visibility";
 import Checkout from "../pages/Checkout/Checkout";
 import Payment from "../pages/Payment/Payment";
-import Admin from "../pages/Admin/Admin";
-import AdminDashboard from "../components/Admin/AdminDashboard";
-import ProductDashboard from "../components/Admin/Products/ProductDashboard";
-import Category from "../components/Admin/Category/Category";
 
 const Routers = () => {
     return (
@@ -36,7 +32,6 @@ const Routers = () => {
                     <Route path="men" element={<Men />} />
                     <Route path="women" element={<Women />} />
                     <Route path="kids" element={<Kids />} />
-                    {/* <Route path="product" element={<Product />} /> */}
                     <Route
                         path="/product/:gender?/:category?"
                         element={<Product />}
@@ -72,12 +67,6 @@ const Routers = () => {
                 <Route path="/auth">
                     <Route index element={<Auth />} />
                     <Route path="resignation" element={<Registration />} />
-                </Route>
-                {/*!----- Admin -----!*/}
-                <Route path="/admin" element={<Admin />}>
-                    <Route index element={<AdminDashboard />} />
-                    <Route path="products" element={<ProductDashboard />} />
-                    <Route path="category" element={<Category />} />
                 </Route>
             </Routes>
         </>

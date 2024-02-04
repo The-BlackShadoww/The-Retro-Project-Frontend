@@ -15,12 +15,16 @@ const SearchedProducts = ({ closer, input, searchedProduct }) => {
                     <div
                         className={`w-full flex justify-between my-5 overflow-hidden`}
                     >
-                        <div className="max-w-[200px] max-h-[200px] overflow-hidden">
+                        <div className="tablet:max-w-[200px] tablet:max-h-[200px] max-w-[150px] max-h-[150px] overflow-hidden">
                             <ProductImg img={p.main_img} />
                         </div>
                         <div className="text-end">
-                            <p className="text-xl font-semibold">{p.name}</p>
-                            <p className="text-xl font-semibold">${p.price}</p>
+                            <p className="tablet:text-xl font-semibold">
+                                {p.name}
+                            </p>
+                            <p className="tablet:text-xl font-semibold">
+                                ${p.price}
+                            </p>
                         </div>
                     </div>
                 </Link>

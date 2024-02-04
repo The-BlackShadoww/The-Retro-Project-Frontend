@@ -7,12 +7,6 @@ const Gender = ({
     isKidsChecked,
     handleCheck,
 }) => {
-    const data = {
-        isMenChecked: isMenChecked,
-        isWomenChecked: isWomenChecked,
-        isKidsChecked: isKidsChecked,
-    };
-
     return (
         <div className={`pt-3 pb-6 font-medium`}>
             <h4>Gender</h4>

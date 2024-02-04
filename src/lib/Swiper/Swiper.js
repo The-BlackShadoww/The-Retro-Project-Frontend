@@ -6,7 +6,7 @@ import {
     SwiperButtonSm,
 } from "./SwiperButtons";
 import "swiper/css";
-import "./assets/css/style.css";
+// import "./assets/css/style.css";
 import {
     SwiperSlides,
     SwiperSlidesLayard,

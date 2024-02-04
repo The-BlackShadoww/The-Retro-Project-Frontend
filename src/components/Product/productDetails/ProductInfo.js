@@ -100,35 +100,6 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
         }
     };
 
-    //! with modal
-    // const handelFavorite = (product) => {
-    //     const newIsFavorite = !isFavorite;
-
-    //     const updatedProduct = allProducts.map((item) => {
-    //         if (item.id === product.id) {
-    //             return {
-    //                 ...item,
-    //                 favorite: !item.favorite,
-    //             };
-    //         } else {
-    //             return item;
-    //         }
-    //     });
-
-    //     setAllProducts([...updatedProduct]);
-    //     setModal([...modal, product]);
-    //     setIsFavorite(newIsFavorite);
-    //     if (newIsFavorite) {
-    //         setModalTitle("Added to the Favorites");
-    //     } else {
-    //         setModalTitle("Removed from the Favorites");
-    //     }
-    //     handleModalViewOpen();
-    //     setTimeout(() => {
-    //         handleModalViewClose();
-    //     }, 2000);
-    // };
-
     let content;
 
     content = data.map((product) => (

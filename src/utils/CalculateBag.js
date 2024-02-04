@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { BagContext } from "../contexts";
 
-// when bag data will come from a api we can convert this component into a utility function because then we don't have to use the context, we can directly map an array.
+//* when bag data will come from a api we can convert this component into a utility function because then we don't have to use the context, we can directly map an array.
 
 export const GetBagTotal = () => {
     const { bag } = useContext(BagContext);
