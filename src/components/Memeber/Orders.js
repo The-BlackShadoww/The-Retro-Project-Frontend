@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Button } from "../UI/Buttons/Button";
 import OrderTable from "./OrderTable";
 import OrderGrid from "./OrderGrid";
+import { formatDateTime } from "../../utils/formatDateTime";
 
 const Orders = () => {
     const data = [
@@ -36,19 +37,6 @@ const Orders = () => {
             discount: 0,
         },
     ];
-
-    const formatDateTime = (dateTimeString) => {
-        const options = {
-            // weekday: "short",
-            weekday: "long",
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-        };
-        return new Date(dateTimeString).toLocaleDateString("en-US", options);
-    };
 
     let content;
     if (data.length > 0) {

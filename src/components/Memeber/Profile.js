@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { CurrentAccountContext } from "../../contexts";
+import { formatDateTime } from "../../utils/formatDateTime";
 
 const Profile = () => {
     const { currentAccount } = useContext(CurrentAccountContext);
@@ -15,7 +16,11 @@ const Profile = () => {
                         <h1 className="text-3xl font-medium">
                             {currentAccount.firstName} {currentAccount.lastName}
                         </h1>
-                        <p>Retro Member since {currentAccount.date}</p>
+                        <p>
+                            Retro Member since{" "}
+                            {formatDateTime(currentAccount.date)}
+                        </p>
+                        {/* <p>Retro Member since {currentAccount.date}</p> */}
                     </div>
                 </div>
                 <div className="mt-10 pl-2">

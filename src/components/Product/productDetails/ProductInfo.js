@@ -20,6 +20,7 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
     const [showModal, setShowModal] = useState(false);
     const [modalTitle, setModalTitle] = useState("");
     const [isTokenMissing, setIsTokenMissing] = useState(false);
+    const [message, setMessage] = useState("");
 
     useEffect(() => {
         if (isTokenMissing) {
@@ -59,11 +60,15 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
                 setTimeout(() => {
                     handleModalViewClose();
                 }, 2000);
+                setMessage("");
             } else {
                 if (found) {
-                    alert("This product has already been added to the bag");
+                    setMessage("* This product is already in the bag");
+                    setTimeout(() => {
+                        setMessage("");
+                    }, 2000);
                 } else if (!size) {
-                    alert("select a size");
+                    setMessage("* select a size please");
                 }
             }
         } else {
@@ -169,6 +174,10 @@ const ProductInfo = ({ data, formControl, handelModal, isModalOpen }) => {
                                 )}
                             </span>
                         </LargeButtonWhite>
+                        <br />
+                        <span className="text-lg text-red-600 font-semibold">
+                            {message}
+                        </span>
                         <div className="pt-8">
                             <p className="font-semibold">
                                 {product.description}

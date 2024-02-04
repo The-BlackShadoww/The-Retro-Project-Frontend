@@ -12,12 +12,16 @@ import { BagContext } from "../../../contexts";
 
 const MobileNav = ({
     isSideNavOpen,
+    isSearching,
     setIsSideNavOpen,
-    mobileSearch,
-    setMobileSearch,
     mobileSearchHandler,
     mobileSiderHandler,
     searchInputRef,
+    input,
+    closer,
+    removeValue,
+    onSearch,
+    searchedProduct,
 }) => {
     const { bag } = useContext(BagContext);
     return (
@@ -72,9 +76,14 @@ const MobileNav = ({
             </div>
             {/* Searchbar */}
             <Searchbar
-                isSearch={mobileSearch}
+                isSearch={isSearching}
                 searchHandler={mobileSearchHandler}
                 searchInputRef={searchInputRef}
+                input={input}
+                closer={closer}
+                removeValue={removeValue}
+                onSearch={onSearch}
+                searchedProduct={searchedProduct}
             />
         </div>
     );

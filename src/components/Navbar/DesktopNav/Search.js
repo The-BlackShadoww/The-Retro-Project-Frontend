@@ -2,6 +2,7 @@ import React from "react";
 import { CloseIcon, MagnifyingGlassIcon } from "../../../assests/icons/Icons";
 import "../Nav.css";
 import { Link } from "react-router-dom";
+import SearchedProducts from "../SearchedProducts";
 
 const Search = ({
     isSearching,
@@ -10,8 +11,9 @@ const Search = ({
     setInput,
     opener,
     closer,
-    handleValue,
+    handleSearch,
     removeValue,
+    searchedProduct,
 }) => {
     return (
         <div
@@ -44,7 +46,7 @@ const Search = ({
                                 tabIndex="0"
                                 placeholder="Search"
                                 onKeyDownCapture={opener}
-                                onChange={handleValue}
+                                onChange={handleSearch}
                                 value={input}
                             />
                             {/* inline-flex and hidden */}
@@ -80,25 +82,36 @@ const Search = ({
                             : "right-[-100%]"
                     } p-3 transition-all overflow-y-scroll bg-white`}
                 >
-                    <div className="w-[656px] mx-auto p-8">
-                        <div className="">
+                    <div className="w-[656px] mx-auto p-8 ">
+                        <SearchedProducts
+                            closer={closer}
+                            input={input}
+                            searchedProduct={searchedProduct}
+                        />
+                        <div
+                            className={`${
+                                input.length > 0 && searchedProduct.length > 0
+                                    ? "hidden"
+                                    : "block"
+                            }`}
+                        >
                             <p className="pb-4 font-bold">
                                 Popular search items
                             </p>
                             <ul>
-                                <li>
+                                <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
                                     <Link to="">product 1</Link>
                                 </li>
-                                <li>
+                                <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
                                     <Link to="">product 2</Link>
                                 </li>
-                                <li>
+                                <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
                                     <Link to="">product 3</Link>
                                 </li>
-                                <li>
+                                <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
                                     <Link to="">product 4</Link>
                                 </li>
-                                <li>
+                                <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
                                     <Link to="">product 5</Link>
                                 </li>
                             </ul>
@@ -112,38 +125,27 @@ const Search = ({
 
 export default Search;
 
-//! with state
-// import React, { useState } from "react";
+//! without search
+// import React from "react";
 // import { CloseIcon, MagnifyingGlassIcon } from "../../../assests/icons/Icons";
 // import "../Nav.css";
 // import { Link } from "react-router-dom";
 
-// const Search = () => {
-//     const [isSearching, setIsSearching] = useState(false);
-//     const [input, setInput] = useState("");
-
-//     const opener = () => {
-//         setIsSearching(true);
-//     };
-
-//     const closer = () => {
-//         setIsSearching(false);
-//         setInput("");
-//     };
-
-//     const handleValue = (e) => {
-//         setInput(e.target.value);
-//     };
-
-//     const removeValue = () => {
-//         setInput("");
-//     };
-
+// const Search = ({
+//     isSearching,
+//     setIsSearching,
+//     input,
+//     setInput,
+//     opener,
+//     closer,
+//     handleValue,
+//     removeValue,
+// }) => {
 //     return (
 //         <div
 //             className={`${
 //                 isSearching
-//                     ? "fixed top-0 left-0 w-screen h-screen z-50 bg-black/40 backdrop-blur-sm"
+//                     ? "fixed top-0 left-0 w-screen h-screen z-[10] bg-black/40 backdrop-blur-sm"
 //                     : null
 //             }`}
 //         >
@@ -201,28 +203,30 @@ export default Search;
 //                     className={`${
 //                         isSearching ? "w-full" : "w-0"
 //                     }  max-h-[100vh] absolute top-[60px] ${
-//                         isSearching ? "right-0 -translate-y-[8px]" : "right-[-100%]"
+//                         isSearching
+//                             ? "right-0 -translate-y-[8px]"
+//                             : "right-[-100%]"
 //                     } p-3 transition-all overflow-y-scroll bg-white`}
 //                 >
-//                     <div className="w-[656px] mx-auto p-8">
+//                     <div className="w-[656px] mx-auto p-8 bg-indigo-400">
 //                         <div className="">
 //                             <p className="pb-4 font-bold">
 //                                 Popular search items
 //                             </p>
 //                             <ul>
-//                                 <li>
+//                                 <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
 //                                     <Link to="">product 1</Link>
 //                                 </li>
-//                                 <li>
+//                                 <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
 //                                     <Link to="">product 2</Link>
 //                                 </li>
-//                                 <li>
+//                                 <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
 //                                     <Link to="">product 3</Link>
 //                                 </li>
-//                                 <li>
+//                                 <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
 //                                     <Link to="">product 4</Link>
 //                                 </li>
-//                                 <li>
+//                                 <li className="text-sm font-semibold text-gray-500 py-1 hover:text-black">
 //                                     <Link to="">product 5</Link>
 //                                 </li>
 //                             </ul>
