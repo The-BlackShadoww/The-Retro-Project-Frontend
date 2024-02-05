@@ -36,7 +36,7 @@ const Dropdown = ({ title, path, children }) => {
         >
             <Link
                 to={path}
-                className="py-6 px-4 font-semibold hover:opacity-50"
+                className="py-6 px-4 font-semibold hover:opacity-50 transition-all duration-200"
             >
                 {title}
             </Link>

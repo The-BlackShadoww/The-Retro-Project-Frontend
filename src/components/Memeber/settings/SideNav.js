@@ -13,7 +13,7 @@ const SideNav = () => {
                                 <div className="mobile:block hidden">
                                     <PersonIcon />
                                 </div>
-                                <p className="mobile:pl-5 mobile:text-base text-xs font-medium">
+                                <p className="mobile:pl-5 mobile:text-base text-xs font-medium hover:opacity-50 transition-all duration-200">
                                     Account Details
                                 </p>
                             </div>
@@ -25,7 +25,7 @@ const SideNav = () => {
                                 <div className="mobile:block hidden">
                                     <WalletIcon />
                                 </div>
-                                <p className="mobile:pl-5 mobile:text-base text-xs font-medium">
+                                <p className="mobile:pl-5 mobile:text-base text-xs font-medium hover:opacity-50 transition-all duration-200">
                                     Payment Methods
                                 </p>
                             </div>
@@ -37,7 +37,7 @@ const SideNav = () => {
                                 <div className="mobile:block hidden">
                                     <LinkIcon />
                                 </div>
-                                <p className="tablet:pl-5 mobile:text-base text-xs font-medium">
+                                <p className="tablet:pl-5 mobile:text-base text-xs font-medium hover:opacity-50 transition-all duration-200">
                                     Profile Visibility
                                 </p>
                             </div>

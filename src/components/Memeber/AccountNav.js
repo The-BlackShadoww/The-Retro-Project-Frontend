@@ -7,22 +7,34 @@ const AccountNav = () => {
             <nav>
                 <ul className="w-full flex flex-grow-[1] justify-center">
                     <li>
-                        <Link to="profile" className="pr-6 font-semibold">
+                        <Link
+                            to="profile"
+                            className="pr-6 font-semibold hover:opacity-50 transition-all duration-200"
+                        >
                             Profile
                         </Link>
                     </li>
                     <li>
-                        <Link to="order" className="pr-6 font-semibold">
+                        <Link
+                            to="order"
+                            className="pr-6 font-semibold hover:opacity-50 transition-all duration-200"
+                        >
                             Orders
                         </Link>
                     </li>
                     <li>
-                        <Link to="favorites" className="pr-6 font-semibold">
+                        <Link
+                            to="favorites"
+                            className="pr-6 font-semibold hover:opacity-50 transition-all duration-200"
+                        >
                             Favorites
                         </Link>
                     </li>
                     <li>
-                        <Link to="settings" className="pr-6 font-semibold">
+                        <Link
+                            to="settings"
+                            className="pr-6 font-semibold hover:opacity-50 transition-all duration-200"
+                        >
                             Settings
                         </Link>
                     </li>

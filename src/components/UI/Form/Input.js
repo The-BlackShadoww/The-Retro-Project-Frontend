@@ -26,7 +26,7 @@ export const Input = ({
                 onChange={onChange}
                 disabled={disabled}
                 placeholder={placeholder}
-                className="w-full bg-transparent outline-none px-4 py-3"
+                className="w-full bg-transparent outline-none px-4 py-3 placeholder:text-[#707072]"
             />
             <label
                 for={id}
