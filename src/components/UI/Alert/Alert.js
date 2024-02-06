@@ -5,10 +5,10 @@ import "../../../assests/styles/global.css";
 const Alert = ({ message, onAlertChange, children }) => {
     return (
         <div className="w-screen h-screen fixed top-0 left-0 flex justify-center items-center bg-black/50 z-[100] backdrop-blur-sm">
-            <div className="Poppins bg-white text-black max-h-[300px] h-full max-w-[500px] w-full mx-2 relative p-4 rounded-md border overflow-hidden">
+            <div className="Poppins bg-white text-black max-h-[300px] h-full max-w-[500px] w-full mx-2 relative px-10 py-12 rounded-3xl border overflow-hidden">
                 <span
                     onClick={onAlertChange}
-                    className="absolute top-3 right-3 cursor-pointer"
+                    className="absolute top-[2rem] right-[2rem] cursor-pointer border border-black rounded-full p-1"
                 >
                     <CloseIcon />
                 </span>

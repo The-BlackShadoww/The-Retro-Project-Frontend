@@ -1,9 +1,16 @@
-import React, { useContext } from "react";
-import { CurrentAccountContext } from "../../contexts";
+import React, { useContext, useEffect } from "react";
+import { CurrentAccountContext, LocationContext } from "../../contexts";
 import { formatDateTime } from "../../utils/formatDateTime";
+import { useLocation } from "react-router-dom";
 
 const Profile = () => {
     const { currentAccount } = useContext(CurrentAccountContext);
+    const { setLocation } = useContext(LocationContext);
+    const getLocation = useLocation();
+
+    useEffect(() => {
+        setLocation(getLocation.pathname);
+    });
 
     let content;
 

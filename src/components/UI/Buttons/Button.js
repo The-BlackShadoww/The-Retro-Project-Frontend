@@ -2,10 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../../assests/styles/global.css";
 
-export const Button = ({ title, children, path }) => {
+export const Button = ({ title, children, path, type }) => {
     return (
         <Link to={path}>
-            <button className="Poppins text-white text-sm bg-[#111111] px-5 py-2 mx-1 md:my-0 my-2 rounded-full transition-all hover:opacity-50">
+            <button
+                type={type}
+                className="Poppins text-white text-sm bg-[#111111] px-5 py-2 mx-1 md:my-0 my-2 rounded-full transition-all hover:opacity-50"
+            >
                 <span className="font-semibold text-base">
                     {children}
                     {title}

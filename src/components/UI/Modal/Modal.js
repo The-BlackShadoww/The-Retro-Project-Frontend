@@ -12,15 +12,15 @@ const Modal = ({
 }) => {
     return (
         <div
-            style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
             className={`w-screen h-screen fixed top-0 left-0 z-[100] opacity-100 ${
                 isModalOpen ? "flex" : "hidden"
             }  items-center justify-center inset-0 backdrop-blur-sm`}
         >
-            <div className="max-w-[920px] min-w-[400px] w-full bg-white z-[110] rounded-xl p-5 relative overflow-auto inset-y-auto mx-8">
+            <div className="max-w-[920px] min-w-[400px] w-full h-auto bg-white z-[110] px-10 py-12 rounded-xl relative overflow-auto inset-y-auto mx-8">
                 <div
                     onClick={handelModal}
-                    className="absolute top-3 right-3 cursor-pointer"
+                    className="absolute top-[3rem] right-[2.5rem] cursor-pointer border border-black rounded-full p-1"
                 >
                     <CloseIcon />
                 </div>

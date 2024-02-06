@@ -1,10 +1,19 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import { Button } from "../UI/Buttons/Button";
 import OrderTable from "./OrderTable";
 import OrderGrid from "./OrderGrid";
 import { formatDateTime } from "../../utils/formatDateTime";
+import { LocationContext } from "../../contexts";
+import { useLocation } from "react-router-dom";
 
 const Orders = () => {
+    const { setLocation } = useContext(LocationContext);
+    const getLocation = useLocation();
+
+    useEffect(() => {
+        setLocation(getLocation.pathname);
+    });
+
     const data = [
         {
             transaction_id: "transaction id",

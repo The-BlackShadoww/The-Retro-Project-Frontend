@@ -44,6 +44,5 @@ export const signOut = () => {
     localStorage.removeItem("account");
     localStorage.removeItem("memberId");
     localStorage.removeItem("authToken");
-
     window.location.reload();
 };
